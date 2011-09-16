@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	  <title>Samplecms</title>
+	  <%= javascript_include_tag "jquery", "jquery.wysiwyg" %>
+	  	  <%= stylesheet_link_tag :all %>
+
+	  <%= csrf_meta_tag %>
+	</head>
+	<body>
+		<div id="wrapper">
+			<div id="header">
+				<div id="top">
+					<ul id="topmenu">
+						<li><%= link_to "HOME", home_path %></li>
+						<% @page = Page.all %>
+						<% unless @page.blank? %>
+							<% @page.each do |page| %>
+								<li><%= link_to page.menu_header, page_path(:pages => page.menu_header) %></li>
+							<% end %>
+						<% end %>
+					</ul>
+					<div id="search">
+						<label for="query">Search</label>
+						<input id="query" name="query" type="search">
+						<button>Search</button>
+					</div>
+				</div>
+				<div id="logo">
+					<h1><%= website_title %></h1>
+					<p>
+						<%= website_description %>
+						<%= website_version %>
+					</p>
+
+				</div>
+			</div>
+			<div id="content">
+				<%- flash.each do |name, msg| -%>
+				  <%= content_tag :div, msg, :class => "flash_#{name}" %>
+				<%- end -%>
+				<%= yield %>
+			</div>
+			This site is powered by <%= website_title %> | <%= link_to "Admin", administration_path %> => 
+			<% unless current_user.blank? %>
+				<%= link_to "logout", logout_path %> 
+			<% else %>
+				<%= link_to "login", login_path %> 
+			<% end %>
+
+		</div>
+	</body>
+</html>

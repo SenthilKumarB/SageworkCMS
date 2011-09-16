@@ -1,0 +1,28 @@
+<div id="form_header">
+	<h3>Upload</h3>
+	<%= form_tag({:controller => "cmsfile", :action => "file_upload"},:multipart => true) do %>
+		<div class="form">
+	      <span class="label">Upload file to:</span>
+	      <%= select_tag "directoryinfo", options_for_select(Setting::FILE_CATEGORIES) %> 
+	    </div>
+	   	<div class="form">
+	      <span class="label">Upload file from:</span>
+	      <%= file_field_tag "fileupload" %>
+	     </div>
+		<%= submit_tag :upload %>
+	<% end %>
+</div>
+<div id="form_header">
+    <h3>views files in root</h3>
+    <%= form_tag({:controller => "cmsfile", :action => "file_directory_list"}) %>
+	<div class="form">
+	  <span class="label"></span>
+      <%= select_tag "view_directory_info", options_for_select(Setting::FILE_CATEGORIES) %> 
+	</div>
+	<%= submit_tag "View" %>
+	<br/>
+	List of files:<br/>
+	..<br/>
+	..<br/>
+	..<br/>
+</div>

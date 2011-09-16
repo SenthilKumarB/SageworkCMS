@@ -1,0 +1,16 @@
+<div id = "form_header">
+	<%= link_to "Admin", administration_path %> => <%= link_to "Home", home_path %> 
+	<h1><%= website_title %> <%= current_user.login %> </h1>
+		categories: <%= link_to "Add new", :controller=>"category", :action => "new" %> | <%= link_to "View", :controller=>"category", :action => "list" %> <br/>
+		Articles:  <%= link_to "Add new", :controller=>"article", :action => "new" %> | <%= link_to "View", :controller=>"article", :action => "list" %> <br/>
+		Pages: <%= link_to "Add new", :controller=>"page", :action => "new" %> | <%= link_to "View", :controller=>"page", :action => "list" %> <br/>
+		Extra Contents: <%= link_to "Add new", :controller=>"extra_content", :action => "new" %> | <%= link_to "View", :controller=>"extra_content", :action => "list" %> <br/>
+</div>
+<div id = "form_header">
+	<h1> Site </h1>
+	<%= link_to "Settings", settings_path %> | <%= link_to "Files", :controller => "cmsfile" %><br/>
+</div>
+<div id = "form_header">
+	<h1> Login Status </h1>
+	<%= link_to "Logout", logout_path %> <br/>
+</div>

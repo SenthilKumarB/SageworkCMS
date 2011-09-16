@@ -1,0 +1,47 @@
+<div id="form_header">
+  <h1> Site Management Panels </h1>
+  <% form_for @setting, :url => setting_create_path do |f| %>
+    <div>
+      <p><a href="#" id="setting">Settings</a></p>
+      <div id="setting_val">
+          <div class="form">
+           <span class="setting_label"><label>Website title</label></span>
+              <%= text_field_tag :website_title, nil, :placeholder => dynamic_setting_finder(:website_title) %>
+          </div>
+          <div class="form">
+            <span class="setting_label"><label>Website description</label></span>
+              <%= text_field_tag :website_description, nil, :placeholder => dynamic_setting_finder(:website_description) %>
+          </div>
+          <div class="form">
+            <span class="setting_label"><label>Website version</label></span>
+              <%= text_field_tag :website_version, nil, :placeholder => dynamic_setting_finder(:website_version) %>
+          </div>
+      </div>
+      <p><a href="#" id="contact_info">Contact Info</a></p>
+      <div id="contact_info_val">
+         <div class="form">
+            <span class="setting_label"><label>Website email</label></span>
+            <%= text_field_tag :website_email, nil, :placeholder => dynamic_setting_finder(:website_email) %>
+         </div>
+         <div class="form">
+            <span class="setting_label"><label>Contact Subject</label></span>
+            <%= text_field_tag :contact_subject, nil, :placeholder => dynamic_setting_finder(:contact_subject) %>
+        </div>
+    </div>
+    <button>save</button>
+  <% end %>
+</div>
+
+<script>
+  $(document).ready(function(){
+    $("#setting_val").slideUp()
+    $("#contact_info_val").slideUp()
+  });
+
+  $("#setting").click(function(){
+    $("#setting_val").slideToggle()
+  })
+  $("#contact_info").click(function(){
+    $("#contact_info_val").slideToggle()
+  })
+</script>

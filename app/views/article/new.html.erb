@@ -1,0 +1,41 @@
+<script type="text/javascript">
+  $(function()
+  {
+      $('#wysiwyg').wysiwyg();
+  });
+  $(document).ready(function(){
+  	$("#preview").click(function(){
+  		var page_description = $("#wysiwyg").val();
+  		$("#preview_pages").html(page_description);
+	  	$("#preview_pages").toggle();
+  	});
+  });
+</script>
+
+<div id="form_header">
+  <h2> New Page </h2>
+  <div class="form">
+    <span class="label">Title</span>
+    <%= text_field :articles, :title %>
+  </div>
+  <div class="form">
+    <span class="label">Text</span><br/><br/>
+    <%= text_area :articles, :body_part,  :name=>"wysiwyg", :id=>"wysiwyg", :rows=>"5", :cols=>"47" %>
+  </div>
+
+   <div class="form">
+    <span class="label">Text</span><br/><br/>
+    <%= select_tag "categories", options_for_select(Category.all.map(&:name)) %>
+   </div>
+
+    <div class="form">
+    <span class="label">Text</span><br/><br/>
+    <%= check_box :articles, :show_home_page %>
+  </div> 
+</div> 
+
+<div id="form_header">
+	<a id="preview" style="cursor:pointer;"> Preview </a>
+	<div id="preview_pages"></div>
+</div>
+<%= submit_tag "Save" %>

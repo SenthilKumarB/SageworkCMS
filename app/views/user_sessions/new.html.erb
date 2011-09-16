@@ -1,0 +1,36 @@
+<div id="banner">Admin-Home</div>
+<div id="form_header">
+  <h2> Login</h2>
+  <span>User/pass limitations: 4-13 alphanumeric characters only</span><br/><br/>
+  <% form_for @user_session, :url => {:action => "create"} do |f| %>
+    <div class="form">
+     <span class="label"> <%= f.label :login %> </span>
+      <%= f.text_field :login, :placeholder => "Username" %>
+    </div>
+      <span class="label"><%= f.label :password %></span>
+      <%= f.password_field :password, :placeholder => "Password" %>
+    <div class="form">
+     <span class="label"> <%#= f.check_box :remember_me %></span>
+      <%#= f.label :remember_me %>
+    </div>
+    <div class="form">
+    * Please enter the correct sum of these two numbers: <br/>
+      <span class="label"><label class="first_captcha"><%= rand(10) %></label> + <label class="second_captcha"><%= rand(10) %></label></span>
+      <%= hidden_field_tag "first_captcha" %>
+      <%= hidden_field_tag "second_captcha" %>
+      <%= text_field_tag :user_captcha %>
+    </div>
+      <%= f.submit "Login" %>
+  <% end %>
+</div>
+
+<script>
+  $(document).ready(function(){
+    // Getter
+    first_captcha = $(".first_captcha").html();
+    second_captcha = $(".second_captcha").html();
+    //Setter
+    $("#first_captcha").val(first_captcha);
+    $("#second_captcha").val(second_captcha);
+  });
+</script>
