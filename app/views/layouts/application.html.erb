@@ -3,51 +3,92 @@
 	<head>
 	  <title>Samplecms</title>
 	  <%= javascript_include_tag "jquery", "jquery.wysiwyg" %>
-	  	  <%= stylesheet_link_tag :all %>
-
+	  <%= stylesheet_link_tag :all %>
 	  <%= csrf_meta_tag %>
 	</head>
 	<body>
-		<div id="wrapper">
-			<div id="header">
-				<div id="top">
-					<ul id="topmenu">
-						<li><%= link_to "HOME", home_path %></li>
-						<% @page = Page.all %>
-						<% unless @page.blank? %>
-							<% @page.each do |page| %>
-								<li><%= link_to page.menu_header, page_path(:pages => page.menu_header) %></li>
-							<% end %>
-						<% end %>
-					</ul>
-					<div id="search">
-						<label for="query">Search</label>
-						<input id="query" name="query" type="search">
-						<button>Search</button>
-					</div>
-				</div>
-				<div id="logo">
-					<h1><%= website_title %></h1>
-					<p>
-						<%= website_description %>
-						<%= website_version %>
-					</p>
+	<div id="wrapper">
+	  <div id="header">
+	    <div id="top">
+	      <ul id="topmenu">
+	        <li><%= link_to "HOME", home_path %></li>
+	        <% @page = Page.all %>
+	        <% unless @page.blank? %>
+	            <% @page.each do |page| %>
+	                <li><%= link_to page.menu_header, page_path(:pages => page.menu_header) %></li>
+	            <% end %>
+	        <% end %>
+	      </ul>
+	      <div id="search">
+	        <label for="query">Search</label>
+	        <input id="query" name="query" type="search">
+	        <button>Search</button>
+	      </div>
+	    </div>
+	    <div id="logo">
+	      <h1><%= website_title %></h1>
 
-				</div>
-			</div>
-			<div id="content">
-				<%- flash.each do |name, msg| -%>
-				  <%= content_tag :div, msg, :class => "flash_#{name}" %>
-				<%- end -%>
-				<%= yield %>
-			</div>
-			This site is powered by <%= website_title %> | <%= link_to "Admin", administration_path %> => 
-			<% unless current_user.blank? %>
-				<%= link_to "logout", logout_path %> 
-			<% else %>
-				<%= link_to "login", login_path %> 
-			<% end %>
+	      <p>
+	        <%= website_description %>
+	        <%= website_version %>
+	      </p>
 
-		</div>
+	    </div>
+	    <aside style="width:49%;float:right;padding-top:100px;">
+	      <aside id="categories">
+	        <h3>Categories</h3>
+	        <% categories = Category.all %>
+	        <% unless categories.blank? %>
+	            <% categories.each do |category| %>
+	                <p><%= link_to category.name %></p>
+	            <% end %>
+	        <% else %>
+	            <p class="content_not_found">No Categories at the moment..</p>
+	        <% end %>
+	        <p></p>
+
+	        <h3>Rss Feeds</h3>
+
+	        <p class="content_not_found">Rss Articles</p>
+	      </aside>
+	      <aside id="new_posts">
+	        <h3>New Posts</h3>
+	        <% articles = Article.all %>
+	        <% unless articles.blank? %>
+	            <% articles.each do |article| %>
+	                <p><% link_to article.name %></p>
+	            <% end %>
+	        <% else %>
+	            <p class="content_not_found">No Articles at the moment..</p>
+	        <% end %>
+	        <h3>New Comments</h3>
+
+	        <p class="content_not_found">No comments at the Moment</p>
+	            
+	      </aside>
+	    </aside>
+	  </div>
+	  <div id="content">
+	    <div id="banner">
+	      <%= link_to "Admin", administration_path %> => <%= link_to "Home", home_path %>
+	    </div>
+	    <%- flash.each do |name, msg| -%>
+	        <%= content_tag :div, msg, :class => "flash_#{name}" %>
+	    <%- end -%>
+	    <%= yield %>
+	  </div>
+	  <footer>
+	    <div id="footer">
+	      This site is powered by <%= website_title %> | <%= link_to "Admin", administration_path %> =>
+	      <% unless current_user.blank? %>
+	          <%= link_to "logout", logout_path %>
+	      <% else %>
+	          <%= link_to "login", login_path %>
+	      <% end %>
+	    </div>
+	  </footer>
+
+	</div>
 	</body>
 </html>
+

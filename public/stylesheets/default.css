@@ -117,7 +117,56 @@ a {
 }
 
 #banner{
-    background:#0089ac;
+    background: #007cb7;
     padding:10px;
+    width:1125px;
+    color:#fff;
+    font-size:1em;
+}
+#section1{
+    border:1px solid #c3c3c3;
+    width:500px;
+    height:250px;
+}
+.submenu{
+     float: right;
+     width: 355px;
+}
+.section2{
+    border:1px solid #c3c3c3;
+    width:500px;
+    height:100px;
+}
+
+#categories{
+    float:left;
+    padding-bottom:1em;
+}
+#new_posts{
+    text-indent:120px;
+}
+
+
+#footer{
+    width: 800px;
+    text-align: center;
+    color: #595959;
+    background: #F7F7F7;
+    margin-left:150px;
+}
+#content{
+    height:700px;
+    width: 820px;
+}
+
+#banner a{
     color: #FFF;
+
+}
+.section_subclass{
+    margin-left:30px;
+}
+
+.content_not_found{
+    color: #ff0000;
 }

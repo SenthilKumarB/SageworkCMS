@@ -1,16 +1,17 @@
-<div id = "form_header">
-	<%= link_to "Admin", administration_path %> => <%= link_to "Home", home_path %> 
-	<h1><%= website_title %> <%= current_user.login %> </h1>
-		categories: <%= link_to "Add new", :controller=>"category", :action => "new" %> | <%= link_to "View", :controller=>"category", :action => "list" %> <br/>
-		Articles:  <%= link_to "Add new", :controller=>"article", :action => "new" %> | <%= link_to "View", :controller=>"article", :action => "list" %> <br/>
-		Pages: <%= link_to "Add new", :controller=>"page", :action => "new" %> | <%= link_to "View", :controller=>"page", :action => "list" %> <br/>
-		Extra Contents: <%= link_to "Add new", :controller=>"extra_content", :action => "new" %> | <%= link_to "View", :controller=>"extra_content", :action => "list" %> <br/>
-</div>
-<div id = "form_header">
-	<h1> Site </h1>
-	<%= link_to "Settings", settings_path %> | <%= link_to "Files", :controller => "cmsfile" %><br/>
-</div>
-<div id = "form_header">
-	<h1> Login Status </h1>
-	<%= link_to "Logout", logout_path %> <br/>
-</div>
+<section id="section1" >
+	<h3 style="margin-left:185px;">Site Admin</h3>
+	<p class="section_subclass">Categories<span class="submenu"> <%= link_to "Add new", :controller=>"category", :action => "new" %> | <%= link_to "View", :controller=>"category", :action => "list" %></span></p>
+	<p class="section_subclass">Articles<span class="submenu"> <%= link_to "Add new", :controller=>"article", :action => "new" %> | <%= link_to "View", :controller=>"article", :action => "list" %> </span></p>
+	<p class="section_subclass"> Pages<span class="submenu"><%= link_to "Add new", :controller=>"page", :action => "new" %> | <%= link_to "View", :controller=>"page", :action => "list" %> </span></p>
+	<p class="section_subclass">Extra Contents<span class="submenu"><%= link_to "Add new", :controller=>"extra_content", :action => "new" %> | <%= link_to "View", :controller=>"extra_content", :action => "list" %></span></p>
+</section ><br/>
+
+<section class="section2">
+	<h3 style="margin-left:200px;">Site </h3>
+	<span style="margin-left:170px;"><%= link_to "Settings", settings_path %> | <%= link_to "Files", :controller => "cmsfile" %></span><br/>
+</section><br/>
+
+<section class="section2">
+	<h3 style="margin-left:185px;">Login Status</h3>
+	<span style="margin-left:210px;"><%= link_to "Logout", logout_path %></span> <br/>
+</section>

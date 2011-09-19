@@ -2,5 +2,5 @@
 	<h3><%= @article.title %></h3>
 	<span><%= @article.body_part.html_safe %></span>
 <% else %>
-	No Article found
+	<p class="content_not_found">No Article found</p>
 <% end %>
