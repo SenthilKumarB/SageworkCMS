@@ -26,7 +26,7 @@
 
    <div class="form">
     <span class="label">Text</span><br/><br/>
-    <%= select_tag "categories", options_for_select(Category.all.map(&:name)) %>
+    <%= select :articles, :category_id, options_for_select(Category.all.collect {|p| [ p.name, p.id ] }) %>
    </div>
 
     <div class="form">

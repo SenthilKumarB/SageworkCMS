@@ -1,5 +1,5 @@
 .flash_error {
-    width:1140px;
+    width:1133px;
     text-align: right;
     background-color: #fbc9c9;
     color: #ab3636;
@@ -8,7 +8,7 @@
 }
 
 .flash_success {
-    width:1140px;
+    width:1133px;
     text-align: right;
     background-color: #dbf6ce;
     color: #54853d;
@@ -17,7 +17,7 @@
 }
 
 .flash_notice {
-    width:1140px;
+    width:1133px;
     text-align: right;
     background-color: #fffdcf;
     color: #9d9a5b;
@@ -131,6 +131,7 @@ a {
     border:1px solid #c3c3c3;
     width:500px;
     height:250px;
+    margin-top:25px;
 }
 
 .submenu{
@@ -162,7 +163,7 @@ a {
 }
 
 #content{
-    height:700px;
+    height:750px;
     width: 820px;
 }
 

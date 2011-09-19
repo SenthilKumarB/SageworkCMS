@@ -27,12 +27,10 @@
 	    </div>
 	    <div id="logo">
 	      <h1><%= website_title %></h1>
-
 	      <p>
 	        <%= website_description %>
 	        <%= website_version %>
 	      </p>
-
 	    </div>
 	    <aside style="width:49%;float:right;padding-top:100px;">
 	      <aside id="categories">
@@ -40,15 +38,13 @@
 	        <% categories = Category.all %>
 	        <% unless categories.blank? %>
 	            <% categories.each do |category| %>
-	                <p><%= link_to category.name %></p>
+					<p><%= link_to category.name %>(<%= category.articles.count %>)</p>
 	            <% end %>
 	        <% else %>
 	            <p class="content_not_found">No Categories at the moment..</p>
 	        <% end %>
 	        <p></p>
-
 	        <h3>Rss Feeds</h3>
-
 	        <p class="content_not_found">Rss Articles</p>
 	      </aside>
 	      <aside id="new_posts">
@@ -62,9 +58,7 @@
 	            <p class="content_not_found">No Articles at the moment..</p>
 	        <% end %>
 	        <h3>New Comments</h3>
-
-	        <p class="content_not_found">No comments at the Moment</p>
-	            
+	        <p class="content_not_found">No comments at the Moment</p>	            
 	      </aside>
 	    </aside>
 	  </div>
@@ -87,7 +81,6 @@
 	      <% end %>
 	    </div>
 	  </footer>
-
 	</div>
 	</body>
 </html>
