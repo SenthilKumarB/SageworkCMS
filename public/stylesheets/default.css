@@ -1,6 +1,6 @@
-
 .flash_error {
-    text-align: center;
+    width:1140px;
+    text-align: right;
     background-color: #fbc9c9;
     color: #ab3636;
     border: 1px solid #e1a1a1;
@@ -8,7 +8,8 @@
 }
 
 .flash_success {
-    text-align: center;
+    width:1140px;
+    text-align: right;
     background-color: #dbf6ce;
     color: #54853d;
     border: 1px solid #a9c999;
@@ -16,7 +17,8 @@
 }
 
 .flash_notice {
-    text-align: center;
+    width:1140px;
+    text-align: right;
     background-color: #fffdcf;
     color: #9d9a5b;
     border: 1px solid #d6d4a1;
@@ -24,19 +26,20 @@
 }
 
 .form{
-	 margin-right: 10px;
-	 padding : 10px 10px 10px 0px;
+     margin-right: 10px;
+     padding : 10px 10px 10px 0px;
 }
 
 .label{
-	width: 100px;
-	float: left;
+    width: 100px;
+    float: left;
 }
 
 .setting_label{
     width: 200px;
-    float: left;   
+    float: left;  
 }
+
 body {
     font:.75em Arial, Sans-Serif;
     color:#272727;
@@ -45,7 +48,7 @@ body {
 }
 
 #wrapper {
-    width:900px;
+    width:1140px;
     background:#fff;
     margin:0 auto 10px;
     padding:20px;
@@ -57,29 +60,29 @@ body {
 
 #form_header {
     width:500px;
-    border:1px solid #E5E5E5; 
+    border:1px solid #E5E5E5;
     background-color: #FAFAFA;
     padding:10px;
     margin: 10px;
 }
 
 #logo {
-float:left;
-color:gray;
-line-height:25px;
-padding-top:10px;
-}
+    margin-top: 5px;
+    float: left;
+    color: gray;
+    line-height: 25px;
+    padding-top: 10px;}
 
 #logo h1 {
-font-size:2.4em;
-letter-spacing:-1px;
-margin:30px 0 0;
+    font-size:2.4em;
+    letter-spacing:-1px;
+    margin:30px 0 0;
 }
 
 #top {
-float:right;
-text-align:right;
-width:70%;
+    float:right;
+    text-align:right;
+    width:70%;
 }
 
 #topmenu {
@@ -123,15 +126,18 @@ a {
     color:#fff;
     font-size:1em;
 }
+
 #section1{
     border:1px solid #c3c3c3;
     width:500px;
     height:250px;
 }
+
 .submenu{
      float: right;
      width: 355px;
 }
+
 .section2{
     border:1px solid #c3c3c3;
     width:500px;
@@ -142,10 +148,10 @@ a {
     float:left;
     padding-bottom:1em;
 }
+
 #new_posts{
     text-indent:120px;
 }
-
 
 #footer{
     width: 800px;
@@ -154,6 +160,7 @@ a {
     background: #F7F7F7;
     margin-left:150px;
 }
+
 #content{
     height:700px;
     width: 820px;
@@ -161,8 +168,8 @@ a {
 
 #banner a{
     color: #FFF;
-
 }
+
 .section_subclass{
     margin-left:30px;
 }
