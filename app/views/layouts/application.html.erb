@@ -56,7 +56,7 @@
 	        <% articles = Article.all %>
 	        <% unless articles.blank? %>
 	            <% articles.each do |article| %>
-	                <p><% link_to article.name %></p>
+	                <p><%= link_to article.title %></p>
 	            <% end %>
 	        <% else %>
 	            <p class="content_not_found">No Articles at the moment..</p>
