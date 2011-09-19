@@ -13,6 +13,7 @@
 </script>
 
 <div id="form_header">
+<%= form_tag({:controller => "article", :action => "save"}) %>
   <h2> New Page </h2>
   <div class="form">
     <span class="label">Title</span>
@@ -20,7 +21,7 @@
   </div>
   <div class="form">
     <span class="label">Text</span><br/><br/>
-    <%= text_area :articles, :body_part,  :name=>"wysiwyg", :id=>"wysiwyg", :rows=>"5", :cols=>"47" %>
+    <%= text_area :articles, :body_part, :id=>"wysiwyg", :rows=>"5", :cols=>"47" %>
   </div>
 
    <div class="form">
@@ -30,7 +31,7 @@
 
     <div class="form">
     <span class="label">Text</span><br/><br/>
-    <%= check_box :articles, :show_home_page %>
+    <%= check_box :articles, :show_home_page %><label>Show On Home Page</label>
   </div> 
 </div> 
 

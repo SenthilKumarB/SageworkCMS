@@ -9,6 +9,17 @@ class ArticleController < ApplicationController
 		@article = Article.new
 	end
 
+	def save
+		@article = Article.new(params[:articles])
+		if @article.save
+			flash[:success] = "Successfully Saved"
+			redirect_to :back
+		else
+			flash[:error] = "Failed in saving"
+			render :new
+		end
+	end
+
 	def edit
 		@article = Article.find(params[:id])
 	end
