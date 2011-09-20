@@ -155,11 +155,14 @@ a {
 }
 
 #footer{
-    width: 800px;
+    /*width: 800px;*/
+    min-width: 800px;
     text-align: center;
     color: #595959;
     background: #F7F7F7;
-    margin-left:150px;
+    margin-left:150px;    
+    padding-bottom: 20px;
+    padding-top: 45px;
 }
 
 #content{
@@ -177,4 +180,8 @@ a {
 
 .content_not_found{
     color: #ff0000;
+}
+
+.wysiwyg{
+    margin-left:100px;
 }
