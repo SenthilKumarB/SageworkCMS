@@ -1,25 +1,3 @@
-<script type="text/javascript">
-  $(function()
-  {
-    $('#wysiwyg').wysiwyg({
-      controls: {
-        html : { visible : true },      
-        separator07 : { visible : true },
-        cut   : { visible : true },
-        copy  : { visible : true },
-        paste : { visible : true }
-      }
-    });
-  });
-  $(document).ready(function(){
-    $("#preview_pages").hide();      
-    $("#preview").click(function(){
-      var page_description = $("#wysiwyg").val();
-      $("#preview_pages").toggle();      
-      $("#preview_pages").html(page_description);
-    });
-  });
-</script>
 <%= form_tag({:controller => "page", :action => "update", :id => @page.id}) %>
 <div id="form_header">
   <h2> New Page </h2>
@@ -41,4 +19,4 @@
   <a id="preview" style="cursor:pointer;"> Preview </a>
   <div id="preview_pages"></div>
 </div>
-<%= submit_tag "Save" %>
+<%= submit_tag "Update" %>
