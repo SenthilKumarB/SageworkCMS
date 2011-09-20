@@ -1,6 +1,6 @@
 <h1><%= @article.title %></h1>
 <%= @article.body_part.html_safe %><br/>
-<%= @article.created_at %><br/>
+<p style="padding:10px"><strong>Created At: </strong><%= @article.created_at.strftime("%B %d %Y %H:%m %p") %></p>
 <% unless @article.comments.blank? %>
     <h1>Comments</h1>
 <% end %>
@@ -25,5 +25,5 @@
       <span class="label"><label>Comment</label></span><%= text_field :comments, :comment %>
     </div>
     <%= hidden_field :comments, :article_id, :value => @article.id %>
-    <%= submit_tag "save" %>
+    <%= submit_tag "Comment" %>
 <% end %>

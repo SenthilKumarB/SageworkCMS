@@ -1,6 +1,7 @@
 <% unless @article.blank? %>
 	<h3><%= @article.title %></h3>
 	<span><%= @article.body_part.html_safe %></span>
+	<p style="padding:10px"><strong>Created At: </strong><%= @article.created_at.strftime("%B %d %Y %H:%m %p") %></p>
 <% else %>
 	<p class="content_not_found">No Article found</p>
 <% end %>

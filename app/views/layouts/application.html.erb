@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-	  <title>Samplecms</title>
+	  <title><%= @page_title %> - <%= website_title %> <%= website_version %></title>
 	  <%= javascript_include_tag "jquery", "jquery.wysiwyg" %>
 	  <%= stylesheet_link_tag :all %>
 	  <%= csrf_meta_tag %>
@@ -11,13 +11,14 @@
 	  <div id="header">
 	    <div id="top">
 	      <ul id="topmenu">
-	        <li><%= link_to "HOME", home_path %></li>
+	        <li><%= link_to "Home", home_path %></li>
 	        <% @page = Page.all %>
 	        <% unless @page.blank? %>
 	            <% @page.each do |page| %>
-	                <li><%= link_to page.menu_header, page_path(:pages => page.menu_header) %></li>
+	                <li><%= link_to page.menu_header.humanize, page_path(:pages => page.menu_header) %></li>
 	            <% end %>
 	        <% end %>
+	        <li><%= link_to "Site Map", :controller => "static", :action => "site_map" %></li>
 	      </ul>
 	      <div id="search">
 	        <label for="query">Search</label>

@@ -1,4 +1,6 @@
 Samplecms::Application.routes.draw do
+  get "static/site_map"
+
   get "category/index"
 
   get "category/edit"
