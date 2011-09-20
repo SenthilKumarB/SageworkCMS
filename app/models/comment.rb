@@ -1,3 +1,3 @@
 class Comment < ActiveRecord::Base
-	belong_to :article
+	belongs_to :article
 end

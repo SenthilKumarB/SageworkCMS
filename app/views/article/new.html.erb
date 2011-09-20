@@ -14,7 +14,7 @@
 
 <div id="form_header">
 <%= form_tag({:controller => "article", :action => "save"}) %>
-  <h2> New Page </h2>
+  <h2> New Article </h2>
   <div class="form">
     <span class="label">Title</span>
     <%= text_field :articles, :title %>
@@ -29,10 +29,15 @@
     <%= select :articles, :category_id, options_for_select(Category.all.collect {|p| [ p.name, p.id ] }) %>
    </div>
 
-    <div class="form">
+  <div class="form">
     <span class="label">Text</span><br/><br/>
     <%= check_box :articles, :show_home_page %><label>Show On Home Page</label>
-  </div> 
+  </div>
+
+  <div class="form">
+    <span class="label">Text</span><br/><br/>
+    <%= check_box :articles, :enable_comment %><label>Enable Comments</label>
+  </div>
 </div> 
 
 <div id="form_header">

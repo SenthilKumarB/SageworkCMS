@@ -1,2 +1,29 @@
-<h1>Article#index</h1>
-<p>Find me in app/views/article/index.html.erb</p>
+<h1><%= @article.title %></h1>
+<%= @article.body_part.html_safe %><br/>
+<%= @article.created_at %><br/>
+<% unless @article.comments.blank? %>
+    <h1>Comments</h1>
+<% end %>
+<% @article.comments.each do |comment| %>
+    <strong><%= comment.name %></strong> Commented .. <br/>
+    <p style="margin-left:100px;"><%= comment.comment %></p><br/>
+<% end %>
+
+
+<% if @article.enable_comment %>
+    <h3>Leave a comment </h3>
+    <%= form_tag({:controller => "article", :action => "comment"}) %>
+    
+    <div class="form">
+      <span class="label"><label>Your name</label></span><%= text_field :comments, :name %>
+    </div>
+
+    <div class="form">
+      <span class="label"><label>Email</label></span><%= text_field :comments, :url %>
+    </div>
+    <div class="form">
+      <span class="label"><label>Comment</label></span><%= text_field :comments, :comment %>
+    </div>
+    <%= hidden_field :comments, :article_id, :value => @article.id %>
+    <%= submit_tag "save" %>
+<% end %>

@@ -1,0 +1,8 @@
+<h1>Category : <%= @category.name %></h1>
+<% @articles.each do |article| %>
+    <strong><%= article.created_at.strftime("%B %d %Y") %></strong>
+    <div style="margin-left:100px">
+      <h3><%= link_to article.title, :controller => "article", :articles => article.title %></h3>
+      <%= article.body_part.html_safe %>
+    </div><br/>
+<% end %>

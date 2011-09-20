@@ -1,4 +1,12 @@
 Samplecms::Application.routes.draw do
+  get "category/index"
+
+  get "category/edit"
+
+  get "category/show"
+
+  get "category/new"
+
   get "article/index"
 
   get "cmsfile/index"

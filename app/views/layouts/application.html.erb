@@ -38,7 +38,7 @@
 	        <% categories = Category.all %>
 	        <% unless categories.blank? %>
 	            <% categories.each do |category| %>
-					<p><%= link_to category.name %>(<%= category.articles.count %>)</p>
+					<p><%= link_to category.name, :controller  => "category", :category => category.name %>(<%= category.articles.count %>)</p>
 	            <% end %>
 	        <% else %>
 	            <p class="content_not_found">No Categories at the moment..</p>
@@ -49,16 +49,23 @@
 	      </aside>
 	      <aside id="new_posts">
 	        <h3>New Posts</h3>
-	        <% articles = Article.all %>
+	        <% articles = Article.find(:all, :limit => 5, :order=> 'created_at desc') %>
 	        <% unless articles.blank? %>
 	            <% articles.each do |article| %>
-	                <p><%= link_to article.title %></p>
+	                <p><%= link_to article.title, :controller => "article", :articles => article.title %></p>
 	            <% end %>
 	        <% else %>
 	            <p class="content_not_found">No Articles at the moment..</p>
 	        <% end %>
 	        <h3>New Comments</h3>
-	        <p class="content_not_found">No comments at the Moment</p>	            
+            <% comments = Comment.find(:all, :limit => 5, :order=> 'created_at desc') %>
+	        <% unless comments.blank? %>
+	            <% comments.each do |comment| %>
+	                <p><%= link_to "#{comment.comment.slice(0..80)} ...", :controller => "article", :articles => comment.name %></p>
+	            <% end %>
+	        <% else %>
+	            <p class="content_not_found">No comments at the moment..</p>
+	        <% end %>
 	      </aside>
 	    </aside>
 	  </div>

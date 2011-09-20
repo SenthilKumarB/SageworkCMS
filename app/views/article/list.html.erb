@@ -1,10 +1,13 @@
 <div id="form_header">
-  <h3>Articles -  <%= link_to "Add new", :controller=>"article", :action => "new" %> - See: (All) - Filter by: (Year / Month)</h3>
+  <h3>Articles -  <%= link_to "Add new", :controller=>"article", :action => "new" %> - See: (All) - Filter by: (Year /
+    Month)</h3>
+
   <div class="form">
-<% @articles.each do |article| %>
-	<%= text_field :article, :position, :value => article.position, :size => 2 %>
-	<b><%= article.title %></b> =>
-	<%= link_to "View", :controller=>"article", :action => "show", :id => article.id %> => 
-	<%= link_to "Edit", :controller=>"article", :action => "edit", :id => article.id %> 
-<% end %>
+    <% @articles.each do |article| %>
+        <%= text_field :article, :position, :value => article.position, :size => 2 %>
+        <b><%= article.title %></b> =>
+        <%= link_to "View", :controller=>"article", :action => "show", :id => article.id %> =>
+        <%= link_to "Edit", :controller=>"article", :action => "edit", :id => article.id %><br/>
+    <% end %>
+  </div>
 </div>
