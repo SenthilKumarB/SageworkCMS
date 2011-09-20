@@ -1,2 +1,14 @@
-<h1>Category#edit</h1>
-<p>Find me in app/views/category/edit.html.erb</p>
+<div id="form_header">
+	<%= form_tag({:controller => "category", :action => "update", :id => @category.id}) %>
+	  <h2> Edit Category </h2>
+	  <div class="form">
+	    <span class="label">Title</span>
+	    <%= text_field :category, :name, :value => @category.name %>
+	  </div>
+
+	  <div class="form">
+	    <span class="label">Text Description</span>
+	    <%= text_area :category, :description, :style=>"margin-left:100px;", :value => @category.description %>
+	  </div>
+	<%= submit_tag "update" %>
+</div>

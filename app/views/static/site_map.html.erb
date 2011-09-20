@@ -20,6 +20,7 @@
 				<% category.articles.each do |article| %>
 					<li><%= link_to article.title, :controller => "article", :articles => article.title %></li>
 				<% end %>
+            </ul>
         <% end %>
     <% else %>
         <p class="content_not_found">No Categories at the moment..</p>

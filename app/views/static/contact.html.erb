@@ -1,17 +1,20 @@
 <div id="form_header">
-  <h2> Login</h2>
-  <span>* = required field </span><br/><br/>
-  <span>User/pass limitations: 4-13 alphanumeric characters only</span><br/><br/>
-  <% form_for @user_session, :url => {:action => "create"} do |f| %>
+  <h2> Contact </h2>
+  <span>* = required field</span><br/><br/>
+  <%= form_tag({:controller => "static", :action => "contact_email"}) %>
     <div class="form">
-     <span class="label">* <%= f.label :login %> </span>
-      <%= f.text_field :login, :placeholder => "Username" %>
+     <span class="label">* Name :</span>
+     <%= text_field_tag :name %>
     </div>
-      <span class="label">* <%= f.label :password %></span>
-      <%= f.password_field :password, :placeholder => "Password" %>
+      <span class="label">* Email :</span>
+      <%= text_field_tag :email %>
     <div class="form">
-     <span class="label"> <%#= f.check_box :remember_me %></span>
-      <%#= f.label :remember_me %>
+     <span class="label">Website URL :</span>
+     <%= text_field_tag :website_url %>
+    </div>
+    <div class="form">
+     <span class="label">* Message :</span>
+     <%= text_area_tag :message %>
     </div>
     <div class="form">
     * Please enter the correct sum of these two numbers: <br/>
@@ -20,8 +23,7 @@
       <%= hidden_field_tag "second_captcha" %>
       <%= text_field_tag :user_captcha %>
     </div>
-      <%= f.submit "Login" %>
-  <% end %>
+   <%= submit_tag "Contact" %>
 </div>
 
 <script>

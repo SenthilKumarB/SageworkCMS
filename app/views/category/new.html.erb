@@ -1,2 +1,14 @@
-<h1>Category#new</h1>
-<p>Find me in app/views/category/new.html.erb</p>
+<div id="form_header">
+	<%= form_tag({:controller => "category", :action => "save"}) %>
+	  <h2> New Category </h2>
+	  <div class="form">
+	    <span class="label">Title</span>
+	    <%= text_field :category, :name %>
+	  </div>
+
+	  <div class="form">
+	    <span class="label">Text Description</span>
+	    <%= text_area :category, :description, :style=>"margin-left:100px;" %>
+	  </div>
+	<%= submit_tag "save" %>
+</div>

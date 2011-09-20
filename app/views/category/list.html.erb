@@ -1,0 +1,12 @@
+<div id="form_header">
+  <h3>Articles -  <%= link_to "Add new", :controller=>"category", :action => "new" %> - See: (All) - Filter by: (Year / Month)</h3>
+
+  <div class="form">
+    <% @categories.each do |category| %>
+        <%= text_field :article, :position, :size => 2 %>
+        <b><%= category.name %></b> =>
+        <%= link_to "View", :controller=>"category", :action => "index", :category => category.name %> =>
+        <%= link_to "Edit", :controller=>"category", :action => "edit", :id => category.id %><br/>
+    <% end %>
+  </div>
+</div>
