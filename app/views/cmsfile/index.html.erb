@@ -13,8 +13,8 @@
 	<% end %>
 </div>
 <div id="form_header">
-    <h3>views files in root</h3>
-    <%= form_tag({:controller => "cmsfile", :action => "file_directory_list"}) %>
+    <h3>views files in root => <%= params[:view_directory_info] %></h3>
+    <%= form_tag({:controller => "cmsfile", :action => "index"}) %>
 	<div class="form">
 	  <span class="label"></span>
       <%= select_tag "view_directory_info", options_for_select(Setting::FILE_CATEGORIES) %> 
@@ -22,7 +22,13 @@
 	<%= submit_tag "View" %>
 	<br/>
 	List of files:<br/>
-	..<br/>
-	..<br/>
-	..<br/>
+	<% unless @directory_path.blank? %>
+		<% @directory_path.each do |directory| %>
+			<% unless params[:view_directory_info] == ".." %>
+				<%= link_to directory, "/#{params[:view_directory_info]}/#{directory}", :target => "_blank" %><br/>
+			<% else %>
+				<%= directory %><br/>
+			<% end %>
+		<% end %>
+	<% end %>
 </div>

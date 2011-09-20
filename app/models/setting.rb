@@ -1,5 +1,5 @@
 class Setting < ActiveRecord::Base 
-  FILE_CATEGORIES = ["..", "css", "javascripts", "images"]
+  FILE_CATEGORIES = ["..", "stylesheets", "javascripts", "images"]
   def self.upload(upload, directory_info)
 	name =  upload.original_filename
 	directory = "#{RAILS_ROOT}/public/#{directory_info}/"
