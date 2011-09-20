@@ -3,10 +3,12 @@ class PageController < ApplicationController
 
 	def index
 		@page = Page.find_by_menu_header(params[:pages])
+		@page_title = @page.menu_header
 	end
 
 	def new
 		@page = Page.new
+		@page_title = "New Page"
 	end
 
 	def save
@@ -22,6 +24,7 @@ class PageController < ApplicationController
 
 	def edit
 		@page = Page.find(params[:id])
+		@page_title = "Edit Page"
 	end
 
 	def update
@@ -37,6 +40,7 @@ class PageController < ApplicationController
 
 	def list
 		@pages = Page.all
+		@page_title = "View All Pages"
 	end
 
 end

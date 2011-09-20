@@ -4,6 +4,7 @@ class UserSessionsController < ApplicationController
 
   def new
     @user_session = UserSession.new
+    @page_title = "Login Page"
   end
 
   def create

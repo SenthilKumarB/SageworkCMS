@@ -3,6 +3,7 @@ class SettingsController < ApplicationController
 
   def index
   	@setting = Setting.new
+    @page_title = "Admin Settings"
   end
 
   def create

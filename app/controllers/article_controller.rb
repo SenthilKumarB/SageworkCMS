@@ -3,10 +3,12 @@ class ArticleController < ApplicationController
 
 	def index
 		@article = Article.find_by_title(params[:articles])
+    @page_title = @article.title
 	end
 
 	def new
 		@article = Article.new
+    @page_title = "New Article"
 	end
 
 	def save
@@ -21,8 +23,7 @@ class ArticleController < ApplicationController
     end
 
     def comment
-      @comment = Comment.new(params[:comments])
-      
+      @comment = Comment.new(params[:comments])      
       if @comment.save
         flash[:notice] = "successfully saved"
       else
@@ -33,6 +34,7 @@ class ArticleController < ApplicationController
 
 	def edit
 		@article = Article.find(params[:id])
+    @page_title = "Edit Article"
 	end
 
     def update
@@ -48,6 +50,7 @@ class ArticleController < ApplicationController
 
 	def list
 		@articles = Article.all
-    end
+    @page_title = "View All Articles"
+  end
 
 end

@@ -61,7 +61,7 @@
             <% comments = Comment.find(:all, :limit => 5, :order=> 'created_at desc') %>
 	        <% unless comments.blank? %>
 	            <% comments.each do |comment| %>
-	                <p><%= link_to "#{comment.comment.slice(0..80)} ...", :controller => "article", :articles => comment.name %></p>
+	                <p><%= link_to "#{comment.comment.slice(0..80)} ...", "#" %></p>
 	            <% end %>
 	        <% else %>
 	            <p class="content_not_found">No comments at the moment..</p>
@@ -71,7 +71,7 @@
 	  </div>
 	  <div id="content">
 	    <div id="banner">
-	      <%= link_to "Admin", administration_path %> => <%= link_to "Home", home_path %>
+	      <%= link_to "Admin", administration_path %> => <%= link_to "Home", home_path %> <%= "=> #{@page_title}" unless @page_title.blank? %>
 	    </div>
 	    <%- flash.each do |name, msg| -%>
 	        <%= content_tag :div, msg, :class => "flash_#{name}" %>
