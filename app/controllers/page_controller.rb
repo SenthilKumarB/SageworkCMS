@@ -2,9 +2,22 @@ class PageController < ApplicationController
 	before_filter :require_user
 
 	def index
-		@page = Page.find_by_menu_header(params[:pages])
-		@page_title = @page.menu_header
-	end
+	    @page = Page.find_by_menu_header(params[:pages])
+	    @page_title = @page.menu_header
+
+	    respond_to do |format|
+	      format.html # index.html.erb
+	      format.rss { render :layout => false }
+	    end
+	 end
+
+   	def rss_feed
+	    @pages = Page.all
+	    respond_to do |format|
+	      format.html # index.html.erb
+	      format.rss { render :layout => false }
+	    end
+  	end
 
 	def new
 		@page = Page.new

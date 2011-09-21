@@ -1,14 +1,14 @@
 <div id="form_header">
   <h2> Contact </h2>
   <span>* = required field</span><br/><br/>
-  <%= form_tag({:controller => "static", :action => "contact_email"}) %>
+  <%= form_tag({:controller => "static", :action => "contact_email"}, :id => "contact_form") %>
     <div class="form">
      <span class="label">* Name :</span>
-     <%= text_field :contact_email, :name %>
+     <%= text_field :contact_email, :name, :class=>"validate[required]" %>
     </div>
     <div class="form">
       <span class="label">* Email :</span>
-      <%= text_field :contact_email, :email %>
+      <%= text_field :contact_email, :email, :class=>"validate[required]" %>
     </div>
     <div class="form">
      <span class="label">Website URL :</span>
@@ -30,6 +30,7 @@
 
 <script>
   $(document).ready(function(){
+    $("#contact_form").validationEngine();
     // Getter
     first_captcha = $(".first_captcha").html();
     second_captcha = $(".second_captcha").html();

@@ -151,7 +151,8 @@ a {
 }
 
 #new_posts{
-    text-indent:120px;
+    float:right;
+    margin-right:200px;
 }
 
 #footer{

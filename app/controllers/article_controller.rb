@@ -1,10 +1,22 @@
 class ArticleController < ApplicationController
   	before_filter :require_user
 
-	def index
-		@article = Article.find_by_title(params[:articles])
+  def index
+    @article = Article.find_by_title(params[:articles])
     @page_title = @article.title
-	end
+    respond_to do |format|
+      format.html # index.html.erb
+      format.rss { render :layout => false }
+    end
+  end
+
+  def rss_feed
+    @articles = Article.all
+    respond_to do |format|
+      format.html # index.html.erb
+      format.rss { render :layout => false }
+    end
+  end
 
 	def new
 		@article = Article.new

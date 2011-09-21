@@ -23,6 +23,12 @@ Samplecms::Application.routes.draw do
   resources :user_sessions
   root :to => 'home#index'
 
+  #RSS Feeds
+  match 'article'=> "article#index"
+  match 'rss_article_feed' => "article#rss_feed"
+  match 'page'=> "page#index"
+  match 'rss_page_feed' => "page#rss_feed"
+
   match 'administration' => "administration#index", :as => :administration
   match 'page' => "page#index", :as => :page
 
