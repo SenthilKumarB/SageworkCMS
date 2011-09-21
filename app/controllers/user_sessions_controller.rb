@@ -22,7 +22,7 @@ class UserSessionsController < ApplicationController
       		render :action => :new
     	end
     else
-    	flash[:notice] = "Recaptcha error"
+    	flash[:error] = "Recaptcha error"
     	redirect_to :action => :new
     end
   end

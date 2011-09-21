@@ -4,17 +4,19 @@
   <%= form_tag({:controller => "static", :action => "contact_email"}) %>
     <div class="form">
      <span class="label">* Name :</span>
-     <%= text_field_tag :name %>
+     <%= text_field :contact_email, :name %>
     </div>
+    <div class="form">
       <span class="label">* Email :</span>
-      <%= text_field_tag :email %>
+      <%= text_field :contact_email, :email %>
+    </div>
     <div class="form">
      <span class="label">Website URL :</span>
-     <%= text_field_tag :website_url %>
+     <%= text_field :contact_email, :website_url %>
     </div>
     <div class="form">
      <span class="label">* Message :</span>
-     <%= text_area_tag :message %>
+     <%= text_area :contact_email, :message, :id=>"wysiwyg", :rows=>"5", :cols=>"47" %>
     </div>
     <div class="form">
     * Please enter the correct sum of these two numbers: <br/>
