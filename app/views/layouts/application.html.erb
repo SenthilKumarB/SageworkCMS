@@ -34,8 +34,8 @@
 	        <%= website_version %>
 	      </p>
 	    </div>
-	    <aside style="width:49%;float:right;padding-top:100px;">
-	      <aside id="categories">
+	    <div style="width:49%;float:right;padding-top:100px;">
+	      <div id="categories">
 	        <h3>Categories</h3>
 	        <% categories = Category.all %>
 	        <% unless categories.blank? %>
@@ -48,8 +48,8 @@
 	        <p></p>
 	        <h3>Rss Feeds</h3>
 	        <p class="content_not_found">Rss Articles</p>
-	      </aside>
-	      <aside id="new_posts">
+	      </div>
+	      <div id="new_posts">
 	        <h3>New Posts</h3>
 	        <% articles = Article.find(:all, :limit => 5, :order=> 'created_at desc') %>
 	        <% unless articles.blank? %>
@@ -68,8 +68,8 @@
 	        <% else %>
 	            <p class="content_not_found">No comments at the moment..</p>
 	        <% end %>
-	      </aside>
-	    </aside>
+	      </div>
+	    </div>
 	  </div>
 	  <div id="content">
 	    <div id="banner">
