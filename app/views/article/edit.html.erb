@@ -17,6 +17,11 @@
   </div>
 
   <div class="form">
+    <span class="label">Position</span>
+    <%= text_field :articles, :position, :value => @article.position, :size => 2 %>
+  </div>
+
+  <div class="form">
     <%= check_box :articles, :show_home_page, :checked => @article.show_home_page %><label>Show On Home Page</label>
   </div>
   

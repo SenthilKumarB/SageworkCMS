@@ -1,11 +1,11 @@
 <div id="form_header">
   <h3>Pages -  <%= link_to "Add new", :controller=>"page", :action => "new" %> - See: (All) - Filter by: (Year / Month)</h3>
   <div class="form">
-<% @pages.each do |page| %>
-	<%= text_field :page, :position, :value => page.position, :size => 2 %>
-	<b><%= page.title %></b> =>
-	<%= link_to "View", :controller=>"page", :action => "index", :pages => page.menu_header %> => 
-	<%= link_to "Edit", :controller=>"page", :action => "edit", :id => page.id %> <br/>
-<% end %>
-</div>
+	<% @pages.each do |page| %>
+		<%= text_field :page, :position, :value => page.position, :disabled => true, :size => 2 %>
+		<b><%= page.title %></b> =>
+		<%= link_to "View", :controller=>"page", :action => "index", :pages => page.menu_header %> => 
+		<%= link_to "Edit", :controller=>"page", :action => "edit", :id => page.id %> <br/>
+	<% end %>
+  </div>
 </div>

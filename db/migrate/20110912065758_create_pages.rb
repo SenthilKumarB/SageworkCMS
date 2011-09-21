@@ -4,7 +4,7 @@ class CreatePages < ActiveRecord::Migration
       t.string :title
       t.string :menu_header
       t.text :page_description
-      t.integer :position
+      t.integer :position, :default => "0"
       t.timestamps
     end
   end

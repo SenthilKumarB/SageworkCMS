@@ -12,7 +12,7 @@
 	    <div id="top">
 	      <ul id="topmenu">
 	        <li><%= link_to "Home", home_path %></li>
-	        <% @page = Page.all %>
+	        <% @page = Page.find(:all, :order=> 'position asc') %>
 	        <% unless @page.blank? %>
 	            <% @page.each do |page| %>
 	                <li><%= link_to page.menu_header.humanize, page_path(:pages => page.menu_header) %></li>
@@ -37,7 +37,7 @@
 	    <div style="width:49%;float:right;padding-top:100px;">
 	      <div id="categories">
 	        <h3>Categories</h3>
-	        <% categories = Category.all %>
+	        <% categories = Category.find(:all, :order=> 'position asc') %>
 	        <% unless categories.blank? %>
 	            <% categories.each do |category| %>
 					<p><%= link_to category.name, :controller  => "category", :category => category.name %>(<%= category.articles.count %>)</p>

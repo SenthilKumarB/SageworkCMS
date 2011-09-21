@@ -5,7 +5,7 @@ class CreateArticles < ActiveRecord::Migration
       t.text :title
       t.text :body_part
       t.integer :category_id
-      t.integer :position
+      t.integer :position, :default => "0"
       t.timestamps
     end
   end

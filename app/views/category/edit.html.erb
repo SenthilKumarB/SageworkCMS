@@ -10,5 +10,10 @@
 	    <span class="label">Text Description</span>
 	    <%= text_area :category, :description, :style=>"margin-left:100px;", :value => @category.description %>
 	  </div>
+
+	  <div class="form">
+	    <span class="label">Position</span>
+	    <%= text_field :category, :position, :value => @category.position, :size => 2 %>
+	  </div>
 	<%= submit_tag "update" %>
 </div>

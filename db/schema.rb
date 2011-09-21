@@ -10,14 +10,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110920093618) do
+ActiveRecord::Schema.define(:version => 20110921043618) do
 
   create_table "articles", :force => true do |t|
     t.integer  "user_id"
     t.text     "title"
     t.text     "body_part"
     t.integer  "category_id"
-    t.integer  "position"
+    t.integer  "position",       :default => 0
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "show_home_page"
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(:version => 20110920093618) do
     t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "position",    :default => 0
   end
 
   create_table "comments", :force => true do |t|
@@ -45,7 +46,7 @@ ActiveRecord::Schema.define(:version => 20110920093618) do
     t.string   "title"
     t.string   "menu_header"
     t.text     "page_description"
-    t.integer  "position"
+    t.integer  "position",         :default => 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end

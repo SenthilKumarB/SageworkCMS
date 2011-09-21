@@ -11,10 +11,15 @@
     <%= text_area :articles, :body_part, :id=>"wysiwyg", :rows=>"5", :cols=>"47" %>
   </div>
 
-   <div class="form">
+  <div class="form">
     <span class="label">Category</span>
     <%= select :articles, :category_id, options_for_select(Category.all.collect {|p| [ p.name, p.id ] }) %>
-   </div>
+  </div>
+
+  <div class="form">
+    <span class="label">Position</span>
+    <%= text_field :articles, :position, :value => 0, :size => 2 %>
+  </div>
 
   <div class="form">
     <%= check_box :articles, :show_home_page %><label>Show On Home Page</label>

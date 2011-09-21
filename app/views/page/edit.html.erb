@@ -13,6 +13,10 @@
     <span class="label">Text Description</span>
     <%= text_area :pages, :page_description, :value => @page.page_description, :id=>"wysiwyg", :rows=>"5", :cols=>"47" %>
   </div>
+    <div class="form">
+    <span class="label">Text Description</span>
+    <%= text_field :pages, :position, :value => @page.position %>
+  </div>
 </div> 
 
 <div id="form_header">
