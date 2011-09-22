@@ -1,37 +1,37 @@
-<div id="form_header">
 <%= form_tag({:controller => "article", :action => "update", :id => @article.id}) %>
-  <h2> New Article </h2>
-  <div class="form">
-    <span class="label">Title</span>
-    <%= text_field :articles, :title, :value => @article.title %>
-  </div>
-  
-  <div class="form">
-    <span class="label">Text Description</span>
-    <%= text_area :articles, :body_part, :id=>"wysiwyg", :rows=>"5", :cols=>"47", :value => @article.body_part %>
+  <div id="form_header">
+    <h2> New Article </h2>
+    <div class="form">
+      <span class="label">Title</span>
+      <%= text_field :articles, :title, :value => @article.title %>
+    </div>
+    
+    <div class="form">
+      <span class="label">Text Description</span>
+      <%= text_area :articles, :body_part, :id=>"wysiwyg", :rows=>"5", :cols=>"47", :value => @article.body_part %>
+    </div>
+
+    <div class="form">
+      <span class="label">Category</span>
+      <%= select :articles, :category_id, options_for_select(Category.all.collect {|p| [ p.name, p.id ]}, :selected => @article.category_id)%>
+    </div>
+
+    <div class="form">
+      <span class="label">Position</span>
+      <%= text_field :articles, :position, :value => @article.position, :size => 2 %>
+    </div>
+
+    <div class="form">
+      <%= check_box :articles, :show_home_page, :checked => @article.show_home_page %><label>Show On Home Page</label>
+    </div>
+    
+    <div class="form">
+      <%= check_box :articles, :enable_comment, :checked => @article.show_home_page %><label>Enable Comments</label>
+    </div>
   </div>
 
-  <div class="form">
-    <span class="label">Category</span>
-    <%= select :articles, :category_id, options_for_select(Category.all.collect {|p| [ p.name, p.id ]}, :selected => @article.category_id)%>
+  <div id="form_header">
+  	<a id="preview" style="cursor:pointer;"> Preview </a>
+  	<div id="preview_pages"></div>
   </div>
-
-  <div class="form">
-    <span class="label">Position</span>
-    <%= text_field :articles, :position, :value => @article.position, :size => 2 %>
-  </div>
-
-  <div class="form">
-    <%= check_box :articles, :show_home_page, :checked => @article.show_home_page %><label>Show On Home Page</label>
-  </div>
-  
-  <div class="form">
-    <%= check_box :articles, :enable_comment, :checked => @article.show_home_page %><label>Enable Comments</label>
-  </div>
-</div>
-
-<div id="form_header">
-	<a id="preview" style="cursor:pointer;"> Preview </a>
-	<div id="preview_pages"></div>
-</div>
 <%= submit_tag "update" %>

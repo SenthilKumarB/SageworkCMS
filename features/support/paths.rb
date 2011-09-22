@@ -17,8 +17,15 @@ module NavigationHelpers
     when /^administration page$/
       administration_path
 
-    when /^the home$/
-      '/home'
+    when /^article create page$/
+      '/article/new'
+
+      when /^add new page$/
+        '/page/new'
+
+      when /^category new page$/
+        '/category/new'
+
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:

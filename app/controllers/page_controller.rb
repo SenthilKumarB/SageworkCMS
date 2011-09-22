@@ -43,7 +43,7 @@ class PageController < ApplicationController
 	def update
 		@page = Page.find(params[:id])
 		if @page.update_attributes(params[:pages])
-			flash[:sucess] = "Sucessfully updated"
+			flash[:success] = "Successfully updated"
 			redirect_to :back
 		else
 			flash[:error] = "Failed in updating"
