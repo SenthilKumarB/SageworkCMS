@@ -19,7 +19,7 @@ class UserSessionsController < ApplicationController
       		redirect_back_or_default administration_path
     	else
     		flash[:error] = @user_session.errors.full_messages
-      		render :action => :new
+      		redirect_to :action => :new
     	end
     else
     	flash[:error] = "Recaptcha error"

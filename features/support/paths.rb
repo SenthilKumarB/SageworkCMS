@@ -14,8 +14,11 @@ module NavigationHelpers
     when /^the login page$/
       '/login'
     
-    when /^admininstration page$/
+    when /^administration page$/
       administration_path
+
+    when /^the home$/
+      '/home'
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
