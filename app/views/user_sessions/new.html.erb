@@ -2,7 +2,7 @@
   <h2> Login</h2>
   <span>* = required field </span><br/><br/>
   <span>User/pass limitations: 4-13 alphanumeric characters only</span><br/><br/>
-  <% form_for @user_session, :url => {:action => "create"} do |f| %>
+  <%= form_for @user_session, :url => {:action => "create"} do |f| %>
     <div class="form">
      <span class="label">* <%= f.label :login %> </span>
       <%= f.text_field :login, :placeholder => "Username" %>
