@@ -17,7 +17,8 @@ describe UserSessionsController do
     session=Rspec.new
     user_captcha_final=session.captcha
     user_captcha_final.should == 40
-    assigns(:user_session).record.login.should == "admin"
+    assigns(:user_session).record.login.should == "admin" 
+    flash[:notice].should == "Login successful!"
     response.should redirect_to administration_path
   end
 
