@@ -1,27 +1,58 @@
-<div id="featuredworks">
-	<div class="work">
-		<h3>Consulting</h3>
-		<div class="imageBox imageBoxLeft">
-			<a href="#"><img src="images/consulting.jpg" alt="Consulting" /></a>
-        	</div>
+<div style="margin-left:100px;">
+	<div id="featuredworks">
+	  <div class="work">
+	    <h3>Consulting</h3>
+
+	    <div class="imageBox imageBoxLeft">
+	      <a href="#"><img src="images/consulting.jpg" alt="Consulting"/></a>
+	    </div>
+	  </div>
+	  <div class="work">
+	    <h3>Development</h3>
+
+	    <div class="imageBox imageBoxLeft">
+	      <a href="#"><img src="images/development.jpg" alt="Development"/></a>
+	    </div>
+	  </div>
+	  <div class="worklast">
+	    <h3>Outsourcing</h3>
+
+	    <div class="imageBox imageBoxLeft">
+	      <a href="#"><img src="images/outsource.jpg" alt="Outsource"/></a>
+	    </div>
+	  </div>
 	</div>
-	<div class="work">
-		<h3>Development</h3>
-		<div class="imageBox imageBoxLeft">
-			<a href="#"><img src="images/development.jpg" alt="Development" /></a>
-		</div>
-	</div>
-	<div class="worklast">
-		<h3>Outsourcing</h3>
-		<div class="imageBox imageBoxLeft">
-			<a href="#"><img src="images/outsource.jpg" alt="Outsource" /></a>
-		</div>
+	<div class="normalBlock">
+	  <div id="testimonial">
+	    <h3>White Papers</h3>
+
+	    <div class="checkList">
+	      <ul class="check">
+	        <li><a href="#">Ruby on Rails coding practise</a></li>
+	        <li><a href="#">Creating a custom Fedora Distribution</a></li>
+	        <li><a href="#">Ipsum dolor sit amet</a></li>
+	        <li><a href="#">Ipsum dolor sit amet</a></li>
+	        <li><a href="#">Ipsum dolor sit amet</a></li>
+	      </ul>
+	    </div>
+	    <h3>Testimonial</h3>
+	    <blockquote>
+	      <p class="first"> Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Praesent lacinia. Fusce sed magna quis
+	        magna dictum placerat. Mauris consectetuer sapien eget elit. Nulla ac dolor eget lectus consectetuer
+	        <span class="last">sollicitudin.</span></p>
+
+	      <p><cite>â€” John Doe, Position, Company </cite></p>
+	    </blockquote>
+	  </div>
+	  <div id="news">
+	    <h3>Site News</h3>
+	    <ul id="newsItem">
+	    <% unless @article.blank? %>
+	        <li><%= @article.body_part.html_safe %><%= link_to @article.created_at.strftime("%B %d %Y %H:%m %p"), {:controller => "article", :articles => @article.title}, :class=>"block" %></li>
+	    <% else %>
+	        <p class="content_not_found">No Article found</p>
+	    <% end %>
+	    </ul>
+	  </div>
 	</div>
 </div>
-<% unless @article.blank? %>
-	<h3><%= @article.title %></h3>
-	<span><%= @article.body_part.html_safe %></span>
-	<p style="padding:10px"><strong>Created At: </strong><%= @article.created_at.strftime("%B %d %Y %H:%m %p") %></p>
-<% else %>
-	<p class="content_not_found">No Article found</p>
-<% end %>

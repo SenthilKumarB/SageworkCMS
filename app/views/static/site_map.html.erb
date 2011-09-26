@@ -1,6 +1,7 @@
 <h1>Site Map</h1>
 <h3>Pages</h3>
-  <ul>
+<div class="checkList">
+  <ul class="check">
     <li><%= link_to "HOME", home_path %></li>
     <% @page = Page.all %>
     <% unless @page.blank? %>
@@ -10,19 +11,22 @@
     <% end %>
     <li><%= link_to "Site Map", :controller => "static", :action => "site_map" %></li>
   </ul>
+  </div>
 <h3>Articles</h3>
-<ul>
+<div class="checkList">
+  <ul class="check">
     <% categories = Category.all %>
     <% unless categories.blank? %>
         <% categories.each do |category| %>
-			<li><%= link_to category.name, :controller  => "category", :category => category.name %>(<%= category.articles.count %>)</li>
-			<ul>
-				<% category.articles.each do |article| %>
-					<li><%= link_to article.title, :controller => "article", :articles => article.title %></li>
-				<% end %>
+            <li><%= link_to category.name, :controller  => "category", :category => category.name %>(<%= category.articles.count %>)</li>
+            <ul>
+                <% category.articles.each do |article| %>
+                    <li><%= link_to article.title, :controller => "article", :articles => article.title %></li>
+                <% end %>
             </ul>
         <% end %>
     <% else %>
         <p class="content_not_found">No Categories at the moment..</p>
     <% end %>
-</ul>
+  </ul>
+</div>

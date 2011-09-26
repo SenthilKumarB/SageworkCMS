@@ -12,7 +12,7 @@
         <div id="top"><ul class="menu"><%= render :partial => "layouts/menu" %></ul></div>
         <div id="logo"></div>
       </div>
-      <div id="latest_posts">
+      <div id="content">
         <% unless current_user.blank? %>
           <div id="banner">
             <%= link_to "Admin", administration_path %> => <%= link_to "Home", home_path %> <%= "=> #{@page_title}" unless @page_title.blank? %>

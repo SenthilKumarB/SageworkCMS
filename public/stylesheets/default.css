@@ -1,6 +1,7 @@
+
 .flash_error {
     width:1133px;
-    text-align: right;
+    text-align: center;
     background-color: #fbc9c9;
     color: #ab3636;
     border: 1px solid #e1a1a1;
@@ -9,7 +10,7 @@
 
 .flash_success {
     width:1133px;
-    text-align: right;
+    text-align: center;
     background-color: #dbf6ce;
     color: #54853d;
     border: 1px solid #a9c999;
@@ -18,7 +19,7 @@
 
 .flash_notice {
     width:1133px;
-    text-align: right;
+    text-align: center;
     background-color: #fffdcf;
     color: #9d9a5b;
     border: 1px solid #d6d4a1;
@@ -37,42 +38,31 @@
 
 .setting_label{
     width: 200px;
-    float: left;  
+    float: left; 
 }
 
 body {
-/*    font:.75em Arial, Sans-Serif;
-    color:#272727;
-    line-height:1.8em;
-    background:#fff;*/
-    -moz-border-bottom-colors: none;
-    -moz-border-image: none;
-    -moz-border-left-colors: none;
-    -moz-border-right-colors: none;
-    -moz-border-top-colors: none;
-    background: url("../images/bg.png") repeat-x scroll 0 0 #241912;
-    border-color: #C3CC9E -moz-use-text-color -moz-use-text-color;
-    border-right: 0 none;
-    border-style: solid none none;
-    border-width: 6px 0 0;
-    color: #82725F;
-    font-family: "Trebuchet MS",Arial,Helvetica,sans-serif;
-    font-size: 90%;
-    line-height: 1.4em;
-    margin: 0;
+    background: #241912;
     padding: 0;
+    margin: 0;
+    border: 0;
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-top: 6px solid #C3CC9E;
+    background-image: url("../images/bg.png");
+    background-repeat: repeat-x;
+    line-height: 1.4em;
+    font-size: 90%;
+    color: #82725f;
 }
 
 #wrapper {
     width:1000px;
-     /*   background:#fff;*/ 
     margin:0 auto 10px;
     padding:20px;
 }
 
 #header {
     height:110px;
-/*    float: left;*/
     margin: 0;
     padding: 20px 0 5px;
     width: 100%;
@@ -82,22 +72,16 @@ body {
 #form_header {
     width:500px;
     border:1px solid #E5E5E5;
-/*    background-color: #FAFAFA;*/
     padding:10px;
     margin: 10px;
 }
 
 #logo {
-/*    margin-top: 5px;
-    float: left;
-    color: gray;
-    line-height: 25px;
-    padding-top: 10px;*/
     float: left;
     padding: 0;
     margin: 0;
-    background:url(../images/logo.png) no-repeat; 
-    width:267px; 
+    background:url(../images/logo.png) no-repeat;
+    width:267px;
     height:82px;
 }
 
@@ -134,23 +118,12 @@ body {
     color:#F74600;
 }
 
-#search {
-    float:right;
-    clear:both;
-    text-align:right;
-    border-top:1px solid #ccc;
-    margin:0;
-    padding:10px 0 0;
-}
-
 a {
     color: #007cb7;
 }
 
 #banner{
-    /*background: #007cb7;*/
     padding:10px;
-    /*width:1125px;*/
     color:#fff;
     font-size:1em;
     border-bottom: 1px solid #36261C;
@@ -174,31 +147,16 @@ a {
     height:100px;
 }
 
-#categories{
-    float:left;
-    padding-bottom:1em;
-}
-
-#new_posts{
-    float:right;
-    margin-right:200px;
-}
-
 #footer{
-    /*width: 800px;*/
     min-width: 800px;
     text-align: center;
-    /*color: #595959;*/
     color: #716258;
- /*   background: #F7F7F7;*/
-    /*width: 1125px;*/
-    /*margin-left:150px;    */
     padding-bottom: 20px;
     padding-top: 45px;
 }
 
-#latest_posts{
-    min-height: 450px;
+#content{
+    min-height: 800px;
     min-width: 500px;
     border-top: 1px solid #36261C;
 }
@@ -215,10 +173,6 @@ a {
     color: #ff0000;
 }
 
-.wysiwyg{
-    margin-left:100px;
-}
-
 .menuWrap
 {
     text-align: right;
@@ -228,8 +182,8 @@ a {
 .ie6 .menuWrap
 {
     text-align: right;
-    margin: 0px; padding:0px; 
-    float:left; position:relative; top:50px; 
+    margin: 0px; padding:0px;
+    float:left; position:relative; top:50px;
 }
 
 .menu
@@ -240,14 +194,14 @@ a {
     float: right;
 }
 
-.menu li 
+.menu li
 {
     margin: 0;
     padding: 0;
     display: inline;
 }
 
-.menu a 
+.menu a
 {
     display: block;
     float: left;
@@ -256,7 +210,7 @@ a {
     text-decoration: none;
     color: #a5b67e;
 }
-.ie6 .menu a 
+.ie6 .menu a
 {
     display: block;
     float: left;
@@ -265,7 +219,7 @@ a {
     text-decoration: none;
     color: #a5b67e;font-size:14px;
 }
-.menu a:hover 
+.menu a:hover
 {
     display: block;
     float: left;
@@ -273,7 +227,7 @@ a {
     text-decoration: none;
     color: #fff;
 }
-.ie6 .menu a:hover 
+.ie6 .menu a:hover
 {
     display: block;
     float: left;
@@ -282,7 +236,7 @@ a {
     color: #fff;font-size:14px;
 }
 
-.menu .current 
+.menu .current
 {
     background: url("../images/arrow_down.gif") no-repeat center bottom;
     display: block;
@@ -290,13 +244,13 @@ a {
     position: relative;
 }
 
-.menu .current span a 
+.menu .current span a
 {
     background: url("../images/nav_left_bg.gif") no-repeat left top;
     color: #1e140e;
 }
 
-.menu .current  span 
+.menu .current  span
 {
     background: url("../images/nav_right_bg.gif") no-repeat right top;
     display: block;
@@ -305,22 +259,6 @@ a {
 
 h3 {
     color: #fff;
-}
-
-#content a:hover, #content a:active, #content a {
-    text-decoration: none;
-    color: #85AE1D;
-}
-
-#content {
-    width: 45%;
-    float: right;
-    padding-top: 100px;
-}
-
-#latest_posts a:hover, #latest_posts a:active, #latest_posts a {
-    text-decoration: none;
-    color: #85AE1D;
 }
 
  #wrapper h2, #wrapper h3, #wrapper h4, #wrapper h5, #wrapper h6
@@ -353,24 +291,13 @@ h3 {
     color: #85AE1D;
 }
 
-#content {
-    width: 45%;
-    float: right;
-    padding-top: 100px;
-}
-
-#latest_posts a:hover, #latest_posts a:active, #latest_posts a {
-    text-decoration: none;
-    color: #85AE1D;
-}
-
 #footer a:hover, #footer a:active, #footer a {
     text-decoration: none;
     color: #85AE1D;
 }
 
 .formHeader{
-  padding:10px;   
+  padding:10px;  
 }
 
 #featuredworks
@@ -466,4 +393,65 @@ h3 {
 .imageBox .Info
 {
   padding: 40px 0 0 0;
+}
+
+#testimonial
+{
+    float: left;
+    width: 350px;
+}
+
+.normalBlock #news
+{
+    float: right;
+    width: 400px;
+    padding: 0;
+    margin: 0;
+}
+
+.normalBlock #news #newsItem
+{
+    padding: 10px 0 0 0;
+    margin: 0;
+    list-style: none;
+}
+
+.normalBlock #news #newsItem li
+{
+    padding: 0 0 20px 0;
+    margin: 0;
+    list-style: none;
+}
+
+.block
+{
+    display: block;
+}
+
+.checkList .check
+{
+    padding: 10px 0 10px 0;
+    margin: 0;
+}
+
+.checkList .check li
+{
+    background: url("../images/check.gif") no-repeat left 50%;
+    line-height: 1.6em;
+    padding-left: 20px;
+    list-style: none;
+}
+
+blockquote p.first
+{
+    color: #716258;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    background: url("../images/left_quote.gif") no-repeat left 0;
+    text-indent: 20px;
+}
+
+blockquote p .last
+{
+    background: url("../images/right_quote.gif") no-repeat right 0;
+    padding-right: 20px;
 }
