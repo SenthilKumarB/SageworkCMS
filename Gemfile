@@ -9,6 +9,7 @@ gem "rails3-generators"
 
 gem 'mysql'#, '~> 0.2.6'
 gem 'factory_girl'
+gem 'will_paginate'
 
 # Use unicorn as the web server
 # gem 'unicorn'

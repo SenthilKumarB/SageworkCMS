@@ -2,7 +2,6 @@
 	<div id="featuredworks">
 	  <div class="work">
 	    <h3>Consulting</h3>
-
 	    <div class="imageBox imageBoxLeft">
 	      <a href="#"><img src="images/consulting.jpg" alt="Consulting"/></a>
 	    </div>
@@ -25,7 +24,6 @@
 	<div class="normalBlock">
 	  <div id="testimonial">
 	    <h3>White Papers</h3>
-
 	    <div class="checkList">
 	      <ul class="check">
 	        <li><a href="#">Ruby on Rails coding practise</a></li>
@@ -41,14 +39,16 @@
 	        magna dictum placerat. Mauris consectetuer sapien eget elit. Nulla ac dolor eget lectus consectetuer
 	        <span class="last">sollicitudin.</span></p>
 
-	      <p><cite>â€” John Doe, Position, Company </cite></p>
+	      <p><cite>-- John Doe, Position, Company </cite></p>
 	    </blockquote>
 	  </div>
 	  <div id="news">
 	    <h3>Site News</h3>
 	    <ul id="newsItem">
 	    <% unless @article.blank? %>
-	        <li><%= @article.body_part.html_safe %><%= link_to @article.created_at.strftime("%B %d %Y %H:%m %p"), {:controller => "article", :articles => @article.title}, :class=>"block" %></li>
+           <% @article.each do |article| %>
+	        <li><%= article.body_part.html_safe %><%= link_to article.created_at.strftime("%B %d %Y %H:%m %p"), {:controller => "article", :articles => article.title}, :class=>"block" %></li>
+           <% end %>
 	    <% else %>
 	        <p class="content_not_found">No Article found</p>
 	    <% end %>

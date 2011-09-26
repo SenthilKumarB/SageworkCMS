@@ -1,5 +1,5 @@
 class ArticleController < ApplicationController
-  before_filter :require_user, :except => ['index', 'comment', 'rss_feed']
+  before_filter :require_user, :except => ['index', 'comment', 'rss_feed', 'news']
 
   def index
     @article = Article.find_by_title(params[:articles])
@@ -63,6 +63,10 @@ class ArticleController < ApplicationController
 	def list
 		@articles = Article.all
     @page_title = "View All Articles"
+  end
+
+  def news
+    @article = Article.paginate(:page => params[:page], :per_page => 10, :order => "created_at desc")
   end
 
 end

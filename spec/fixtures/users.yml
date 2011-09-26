@@ -1,9 +1,12 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
+  id: 1
   login: admin
   email: senthil@sagework.com
   password_salt: 71fd2bdc8e10991c9b961363ce3200ed713f1f2c4535966e5be16e00ab04e1447014a1b5bb581a04e0ffc46eee960db8c4a32bc6153cbbee310b8125532ffa61
   crypted_password: h4tpzJsryd7i0QnYXbM
-  persistence_token: 2f964ba1af98fe6c556dc6ee6b1cd1db92a5d8fd986ede3e10b544d8aaa3e9f649fbb9ee10a8bfbbb216461e27009c00759262071877590683ec6065ec622ec4   
+  persistence_token: 2f964ba1af98fe6c556dc6ee6b1cd1db92a5d8fd986ede3e10b544d8aaa3e9f649fbb9ee10a8bfbbb216461e27009c00759262071877590683ec6065ec622ec4
+  created_at: 2011-09-22 04:56:50
+  updated_at: 2011-09-22 04:56:50
 

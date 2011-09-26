@@ -455,3 +455,29 @@ blockquote p .last
     background: url("../images/right_quote.gif") no-repeat right 0;
     padding-right: 20px;
 }
+
+.wysiwyg{
+    margin-left:100px;
+}
+
+.newsWrapper
+{
+  margin-bottom: 20px;
+}
+
+.newsHeader
+{
+  margin-top: 5px;
+  margin-bottom: 5px;
+  color: #fff;
+  font-size: 110%;
+}
+
+.newsFooter
+{
+  margin-top: 5px;
+  margin-bottom: 5px;
+  color: #716258;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-style: italic;
+}

@@ -1,0 +1,24 @@
+<h2>Site News</h2>
+
+<div class="imageBox imageBoxRight">
+  <img src="/images/news.jpg" alt="News"/>
+</div>
+
+<% unless @article.blank? %>
+    <% @article.each do |article| %>
+        <div class="newsWrapper">
+          <div class="newsHeader">
+            <%= article.title %>
+          </div>
+          <div class="newsContent">
+            <%= article.body_part.html_safe %>
+          </div>
+          <div class="newsFooter">
+            Posted on <%= article.created_at.strftime("%B %d %Y %H:%m %p") %>, under <%= link_to article.category.name, :controller  => "category", :category => article.category.name %>
+          </div>
+        </div>
+    <% end %>
+<% else %>
+    <p class="content_not_found">No Article found</p>
+<% end %>
+<%= will_paginate @article %>
