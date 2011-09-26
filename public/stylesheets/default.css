@@ -65,13 +65,17 @@ body {
 
 #wrapper {
     width:1140px;
- /*   background:#fff;*/
+     /*   background:#fff;*/ 
     margin:0 auto 10px;
     padding:20px;
 }
 
 #header {
     height:110px;
+    float: left;
+    margin: 0;
+    padding: 20px 0 5px;
+    width: 100%;
 }
 
 #form_header {
@@ -83,11 +87,18 @@ body {
 }
 
 #logo {
-    margin-top: 5px;
+/*    margin-top: 5px;
     float: left;
     color: gray;
     line-height: 25px;
-    padding-top: 10px;}
+    padding-top: 10px;*/
+    float: left;
+    padding: 0;
+    margin: 0;
+    background:url(../images/logo.png) no-repeat; 
+    width:267px; 
+    height:82px;
+}
 
 #logo h1 {
     font-size:2.4em;
@@ -141,6 +152,7 @@ a {
     width:1125px;
     color:#fff;
     font-size:1em;
+    border-bottom: 1px solid #36261C;
 }
 
 #section1{
@@ -175,7 +187,8 @@ a {
     /*width: 800px;*/
     min-width: 800px;
     text-align: center;
-    color: #595959;
+    /*color: #595959;*/
+    color: #716258;
  /*   background: #F7F7F7;*/
     width: 1125px;
     /*margin-left:150px;    */
@@ -183,9 +196,9 @@ a {
     padding-top: 45px;
 }
 
-#latest_post{
-    height:750px;
-    width: 820px;
+#latest_posts{
+    min-height: 450px;
+    min-width: 500px;
 }
 
 #banner a{
@@ -345,6 +358,11 @@ h3 {
 }
 
 #latest_posts a:hover, #latest_posts a:active, #latest_posts a {
+    text-decoration: none;
+    color: #85AE1D;
+}
+
+#footer a:hover, #footer a:active, #footer a {
     text-decoration: none;
     color: #85AE1D;
 }

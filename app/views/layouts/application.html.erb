@@ -10,23 +10,11 @@
     <div id="wrapper">
       <div id="header">
         <div id="top">
-          <ul class="menu">
-              <%= render :partial => "layouts/menu" %>
-          </ul>
-          <div id="search">
-            <label for="query">Search</label>
-            <input id="query" name="query" type="search">
-            <button>Search</button>
-          </div>
+          <ul class="menu"><%= render :partial => "layouts/menu" %></ul>
+
         </div>
-        <div id="logo">
-          <h1><%= website_title %></h1>
-          <p>
-            <%= website_description %>
-            <%= website_version %>
-          </p>
-        </div>
-        </div>
+        <div id="logo"></div>
+      </div>
 
         <div id="content">
           <div id="categories">
