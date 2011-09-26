@@ -1,5 +1,5 @@
 class PageController < ApplicationController
-	before_filter :require_user
+	before_filter :require_user, :except => ['index', 'rss_feed']
 
 	def index
 	    @page = Page.find_by_menu_header(params[:pages])

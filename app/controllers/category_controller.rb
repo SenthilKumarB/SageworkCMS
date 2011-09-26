@@ -1,4 +1,6 @@
 class CategoryController < ApplicationController
+  before_filter :require_user, :except => 'index'
+  
   def index
     @category = Category.find_by_name(params[:category])
     @articles = @category.articles

@@ -1,5 +1,5 @@
 class ArticleController < ApplicationController
-  	before_filter :require_user
+  before_filter :require_user, :except => ['index', 'comment', 'rss_feed']
 
   def index
     @article = Article.find_by_title(params[:articles])
@@ -32,17 +32,17 @@ class ArticleController < ApplicationController
 			flash[:error] = "Failed in saving"
 			render :new
 		end
-    end
+  end
 
-    def comment
-      @comment = Comment.new(params[:comments])      
-      if @comment.save
-        flash[:notice] = "successfully saved"
-      else
-        flash[:error] = "Failed in saving"
-      end
-      redirect_to :back      
+  def comment
+    @comment = Comment.new(params[:comments])      
+    if @comment.save
+      flash[:notice] = "successfully saved"
+    else
+      flash[:error] = "Failed in saving"
     end
+    redirect_to :back      
+  end
 
 	def edit
 		@article = Article.find(params[:id])
