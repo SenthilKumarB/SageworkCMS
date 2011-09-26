@@ -13,9 +13,11 @@
         <div id="logo"></div>
       </div>
       <div id="latest_posts">
-        <div id="banner">
-          <%= link_to "Admin", administration_path %> => <%= link_to "Home", home_path %> <%= "=> #{@page_title}" unless @page_title.blank? %>
-        </div>
+        <% unless current_user.blank? %>
+          <div id="banner">
+            <%= link_to "Admin", administration_path %> => <%= link_to "Home", home_path %> <%= "=> #{@page_title}" unless @page_title.blank? %>
+          </div>
+        <% end  %>
         <%- flash.each do |name, msg| -%>
             <%= content_tag :div, msg, :class => "flash_#{name}" %>
         <%- end -%>
