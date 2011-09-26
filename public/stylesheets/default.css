@@ -136,7 +136,7 @@ a {
 }
 
 #banner{
-    background: #007cb7;
+    /*background: #007cb7;*/
     padding:10px;
     width:1125px;
     color:#fff;
@@ -183,7 +183,7 @@ a {
     padding-top: 45px;
 }
 
-#content{
+#latest_post{
     height:750px;
     width: 820px;
 }
@@ -286,4 +286,65 @@ a {
     background: url("../images/nav_right_bg.gif") no-repeat right top;
     display: block;
     float: left;
+}
+
+h3 {
+    color: #fff;
+}
+
+#content a:hover, #content a:active, #content a {
+    text-decoration: none;
+    color: #85AE1D;
+}
+
+#content {
+    width: 45%;
+    float: right;
+    padding-top: 100px;
+}
+
+#latest_posts a:hover, #latest_posts a:active, #latest_posts a {
+    text-decoration: none;
+    color: #85AE1D;
+}
+
+ #wrapper h2, #wrapper h3, #wrapper h4, #wrapper h5, #wrapper h6
+{
+    color: #fff;
+    padding-top: 10px;
+    margin: 0;
+}
+
+#wrapper h2
+{
+    font-size: 130%;
+    text-transform: uppercase;
+    padding-bottom: 10px;
+}
+
+#wrapper h3
+{
+    color: #eee;
+    font-size: 110%;
+}
+
+#wrapper h4
+{
+    font-size: 100%;
+}
+
+#content a:hover, #content a:active, #content a {
+    text-decoration: none;
+    color: #85AE1D;
+}
+
+#content {
+    width: 45%;
+    float: right;
+    padding-top: 100px;
+}
+
+#latest_posts a:hover, #latest_posts a:active, #latest_posts a {
+    text-decoration: none;
+    color: #85AE1D;
 }
