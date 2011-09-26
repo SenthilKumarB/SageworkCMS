@@ -1,63 +1,17 @@
 <!DOCTYPE html>
 <html>
-    <head>
-      <title><%= @page_title %> - <%= website_title %> <%= website_version %></title>
-      <%= javascript_include_tag :all %>
-      <%= stylesheet_link_tag :all %>
-      <%= csrf_meta_tag %>
-    </head>
-    <body>
+  <head>
+    <title><%= @page_title %> - <%= website_title %> <%= website_version %></title>
+    <%= javascript_include_tag :all %>
+    <%= stylesheet_link_tag :all %>
+    <%= csrf_meta_tag %>
+  </head>
+  <body>
     <div id="wrapper">
       <div id="header">
-        <div id="top">
-          <ul class="menu"><%= render :partial => "layouts/menu" %></ul>
-
-        </div>
+        <div id="top"><ul class="menu"><%= render :partial => "layouts/menu" %></ul></div>
         <div id="logo"></div>
       </div>
-
-        <div id="content">
-          <div id="categories">
-            <h3>Categories</h3>
-            <% categories = Category.find(:all, :order=> 'position asc') %>
-            <% unless categories.blank? %>
-                <% categories.each do |category| %>
-                    <p><%= link_to category.name, :controller  => "category", :category => category.name %>(<%= category.articles.count %>)</p>
-                <% end %>
-            <% else %>
-                <p class="content_not_found">No Categories at the moment..</p>
-            <% end %>
-            <p></p>
-            <h3>Rss Feeds</h3>
-            <p class="content_not_found">
-                  <%= link_to  'Rss Articles', rss_article_feed_url(:rss) %>
-            </p>
-            <p class="content_not_found">
-                  <%= link_to  'Rss Pages',rss_page_feed_url(:rss) %>
-            </p>
-          </div>
-          <div id="new_posts">
-            <h3>New Posts</h3>
-            <% articles = Article.find(:all, :limit => 5, :order=> 'created_at desc') %>
-            <% unless articles.blank? %>
-                <% articles.each do |article| %>
-                    <p><%= link_to article.title, :controller => "article", :articles => article.title %></p>
-                <% end %>
-            <% else %>
-                <p class="content_not_found">No Articles at the moment..</p>
-            <% end %>
-            <h3>New Comments</h3>
-            <% comments = Comment.find(:all, :limit => 5, :order=> 'created_at desc') %>
-            <% unless comments.blank? %>
-                <% comments.each do |comment| %>
-                    <p><%= link_to "#{comment.comment.slice(0..80)} ...", "#" %></p>
-                <% end %>
-            <% else %>
-                <p class="content_not_found">No comments at the moment..</p>
-            <% end %>
-          </div>
-        </div>
-
       <div id="latest_posts">
         <div id="banner">
           <%= link_to "Admin", administration_path %> => <%= link_to "Home", home_path %> <%= "=> #{@page_title}" unless @page_title.blank? %>
@@ -67,16 +21,14 @@
         <%- end -%>
         <%= yield %>
       </div>
-      <footer>
-        <div id="footer">
-          This site is powered by <%= website_title %> | <%= link_to "Admin", administration_path %> =>
-          <% unless current_user.blank? %>
-              <%= link_to "logout", logout_path %>
-          <% else %>
-              <%= link_to "login", login_path %>
-          <% end %>
-        </div>
-      </footer>
+      <div id="footer">
+        This site is powered by <%= website_title %> | <%= link_to "Admin", administration_path %> =>
+        <% unless current_user.blank? %>
+            <%= link_to "logout", logout_path %>
+        <% else %>
+            <%= link_to "login", login_path %>
+        <% end %>
+      </div>
     </div>
-    </body>
+  </body>
 </html>

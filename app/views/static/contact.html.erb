@@ -1,5 +1,17 @@
-<div id="form_header">
-  <h2> Contact </h2>
+<div class="imageBox imageBoxRight">
+        <img src="/images/contact.jpg" alt="Contact" />
+</div>
+<div class="formHeader">
+<h2>Contact Address</h2>
+  <p>
+        SageWork Software (P) Ltd, <br/>
+        108-A, Mariamalai Adigal Salai, <br/>
+        Pondicherry - 605001, INDIA. <br/>
+        Phone: +91 413 4207236, +91 413 2205631 <br/>
+        Fax : +91 413 2205631 <br/>
+        Email : info@sagework.com
+  </p>
+  <h2> Contact Form </h2>
   <span>* = required field</span><br/><br/>
   <%= form_tag({:controller => "static", :action => "contact_email"}, :id => "contact_form") %>
     <div class="form">
@@ -26,7 +38,7 @@
       <%= text_field_tag :user_captcha %>
     </div>
    <%= submit_tag "Contact" %>
-</div>
+
 
 <script>
   $(document).ready(function(){

@@ -64,7 +64,7 @@ body {
 }
 
 #wrapper {
-    width:1140px;
+    width:1000px;
      /*   background:#fff;*/ 
     margin:0 auto 10px;
     padding:20px;
@@ -149,7 +149,7 @@ a {
 #banner{
     /*background: #007cb7;*/
     padding:10px;
-    width:1125px;
+    /*width:1125px;*/
     color:#fff;
     font-size:1em;
     border-bottom: 1px solid #36261C;
@@ -190,7 +190,7 @@ a {
     /*color: #595959;*/
     color: #716258;
  /*   background: #F7F7F7;*/
-    width: 1125px;
+    /*width: 1125px;*/
     /*margin-left:150px;    */
     padding-bottom: 20px;
     padding-top: 45px;
@@ -365,4 +365,103 @@ h3 {
 #footer a:hover, #footer a:active, #footer a {
     text-decoration: none;
     color: #85AE1D;
+}
+
+.formHeader{
+  padding:10px;   
+}
+
+: #featuredworks
+{
+  padding: 0;
+  margin: 0;
+  float: left;
+}
+
+#featuredworks .work h3, #featuredworks .worklast h3
+{
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #fff;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  margin: 0 10px 0 0;
+}
+
+.work h3 a, .worklast h3 a
+{
+  color: #fff;
+  font-size: 110%;
+  text-decoration: none;
+}
+
+.work, .worklast
+{
+  text-align: center;
+}
+
+
+#featuredworks .work p, #featuredworks .worklast p
+{
+  padding: 0;
+  margin: 0;
+}
+
+#featuredworks .work
+{
+  float: left;
+  width: 230px;
+  padding: 10px 10px;
+  margin-right: 25px;
+}
+.ie6 #featuredworks .work
+{
+  float: left;
+  width: 230px;
+  padding: 10px 10px;
+  margin-right: 10px;
+}
+
+#featuredworks .work img, #featuredworks .worklast img
+{
+  border: 0;
+}
+
+#featuredworks .worklast
+{
+  float: right;
+  width: 230px;
+  padding: 10px 10px;
+}
+
+.imageBox
+{
+  width: 200px;
+  height: 179px;
+  background: url("../images/image_bg.gif") no-repeat;
+  margin: 0;
+  padding: 0;
+}
+
+.imageBox img
+{
+  margin: 0;
+  padding: 30px;
+}
+
+.imageBoxLeft
+{
+  float: left;
+  margin: 0 20px 20px 0;
+}
+
+.imageBoxRight
+{
+  float: right;
+  margin: 0 0 20px 20px;
+}
+
+.imageBox .Info
+{
+  padding: 40px 0 0 0;
 }
