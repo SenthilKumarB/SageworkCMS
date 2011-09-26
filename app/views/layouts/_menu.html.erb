@@ -1,0 +1,9 @@
+<li class="<%= params[:controller] == "home" ? 'current' : "" %>"><span><%= link_to "Home", home_path %></span></li>
+<% @page = Page.find(:all, :order=> 'position asc') %>
+<% unless @page.blank? %>
+    <% @page.each do |page| %>
+        <li class='<%= params[:controller] == "page" && params[:pages] == "#{page.menu_header}" ? "current" : "" %>'><span><%= link_to page.menu_header.humanize, page_path(:pages => page.menu_header) %></span></li>
+    <% end %>
+<% end %>
+<li class="<%= params[:controller] == "static" && params[:action] == "contact" ? 'current' : "" %>"><span><%= link_to "Contact", :controller => "static", :action => "contact" %></span></li>
+<li class="<%= params[:controller] == "static" && params[:action] == "site_map" ? 'current' : "" %>"><span><%= link_to "Site Map", :controller => "static", :action => "site_map" %></span></li>

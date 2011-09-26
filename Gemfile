@@ -8,6 +8,7 @@ gem "authlogic"
 gem "rails3-generators"
 
 gem 'mysql'#, '~> 0.2.6'
+gem 'factory_girl'
 
 # Use unicorn as the web server
 # gem 'unicorn'

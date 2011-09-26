@@ -56,6 +56,8 @@ GEM
     diff-lcs (1.1.3)
     erubis (2.6.6)
       abstract (>= 1.0.0)
+    factory_girl (2.1.2)
+      activesupport
     ffi (1.0.9-x86-mingw32)
     gherkin (2.4.21-x86-mingw32)
       json (>= 1.4.6)
@@ -135,6 +137,7 @@ DEPENDENCIES
   cucumber
   cucumber-rails
   database_cleaner
+  factory_girl
   mysql
   rails (= 3.0.9)
   rails3-generators

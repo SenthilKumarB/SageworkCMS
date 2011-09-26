@@ -2,7 +2,7 @@ require 'spec_helper'
 
 class Rspec
   def captcha
-    user_captcha=10+30
+    user_captcha = 10+30
   end
 end
 

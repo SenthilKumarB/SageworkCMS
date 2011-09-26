@@ -1,3 +1,8 @@
+# Factory.defind(:user) do |p| 
+# 	p.
+# end
+
+
 Given /^I enter required values to create user$/ do
   	@params = {
     	:login => "admin",

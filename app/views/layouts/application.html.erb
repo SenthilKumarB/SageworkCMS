@@ -10,16 +10,8 @@
 	<div id="wrapper">
 	  <div id="header">
 	    <div id="top">
-	      <ul id="topmenu">
-	        <li><%= link_to "Home", home_path %></li>
-	        <% @page = Page.find(:all, :order=> 'position asc') %>
-	        <% unless @page.blank? %>
-	            <% @page.each do |page| %>
-	                <li><%= link_to page.menu_header.humanize, page_path(:pages => page.menu_header) %></li>
-	            <% end %>
-	        <% end %>
-	        <li><%= link_to "Contact", :controller => "static", :action => "contact" %></li>
-	        <li><%= link_to "Site Map", :controller => "static", :action => "site_map" %></li>
+	      <ul class="menu">
+	      	<%= render :partial => "layouts/menu" %>
 	      </ul>
 	      <div id="search">
 	        <label for="query">Search</label>

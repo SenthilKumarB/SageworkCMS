@@ -41,15 +41,31 @@
 }
 
 body {
-    font:.75em Arial, Sans-Serif;
+/*    font:.75em Arial, Sans-Serif;
     color:#272727;
     line-height:1.8em;
-    background:#fff;
+    background:#fff;*/
+    -moz-border-bottom-colors: none;
+    -moz-border-image: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background: url("../images/bg.png") repeat-x scroll 0 0 #241912;
+    border-color: #C3CC9E -moz-use-text-color -moz-use-text-color;
+    border-right: 0 none;
+    border-style: solid none none;
+    border-width: 6px 0 0;
+    color: #82725F;
+    font-family: "Trebuchet MS",Arial,Helvetica,sans-serif;
+    font-size: 90%;
+    line-height: 1.4em;
+    margin: 0;
+    padding: 0;
 }
 
 #wrapper {
     width:1140px;
-    background:#fff;
+ /*   background:#fff;*/
     margin:0 auto 10px;
     padding:20px;
 }
@@ -61,7 +77,7 @@ body {
 #form_header {
     width:500px;
     border:1px solid #E5E5E5;
-    background-color: #FAFAFA;
+/*    background-color: #FAFAFA;*/
     padding:10px;
     margin: 10px;
 }
@@ -160,7 +176,7 @@ a {
     min-width: 800px;
     text-align: center;
     color: #595959;
-    background: #F7F7F7;
+ /*   background: #F7F7F7;*/
     width: 1125px;
     /*margin-left:150px;    */
     padding-bottom: 20px;
@@ -186,4 +202,88 @@ a {
 
 .wysiwyg{
     margin-left:100px;
+}
+
+.menuWrap
+{
+    text-align: right;
+    margin: 50px 0 0 0;
+    float: right;
+}
+.ie6 .menuWrap
+{
+    text-align: right;
+    margin: 0px; padding:0px; 
+    float:left; position:relative; top:50px; 
+}
+
+.menu
+{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    float: right;
+}
+
+.menu li 
+{
+    margin: 0;
+    padding: 0;
+    display: inline;
+}
+
+.menu a 
+{
+    display: block;
+    float: left;
+    text-transform: uppercase;
+    padding: 5px 15px 11px 15px;
+    text-decoration: none;
+    color: #a5b67e;
+}
+.ie6 .menu a 
+{
+    display: block;
+    float: left;
+    text-transform: uppercase;
+    padding: 0px 15px 11px 15px;
+    text-decoration: none;
+    color: #a5b67e;font-size:14px;
+}
+.menu a:hover 
+{
+    display: block;
+    float: left;
+    padding: 5px 15px 11px 15px;
+    text-decoration: none;
+    color: #fff;
+}
+.ie6 .menu a:hover 
+{
+    display: block;
+    float: left;
+    padding: 0px 15px 11px 15px;
+    text-decoration: none;
+    color: #fff;font-size:14px;
+}
+
+.menu .current 
+{
+    background: url("../images/arrow_down.gif") no-repeat center bottom;
+    display: block;
+    float: left;
+    position: relative;
+}
+
+.menu .current span a 
+{
+    background: url("../images/nav_left_bg.gif") no-repeat left top;
+    color: #1e140e;
+}
+
+.menu .current  span 
+{
+    background: url("../images/nav_right_bg.gif") no-repeat right top;
+    display: block;
+    float: left;
 }
