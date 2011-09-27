@@ -1,10 +1,12 @@
 Given /^I am having category params$/ do
-  @params = {
-    	:name => "Rails",
-        :description => "Introduction to Rails",
-        :position => 1,
-     }
-    @category = Category.new(@params)
+  @category = Factory(:category)
+end
+
+Given /^I am following new categories page$/ do
+end
+
+When /^I should follow on Add New Category page$/ do
+  click_link "category_new"
 end
 
 When /^I enter with valid new datas for category$/ do
@@ -15,7 +17,7 @@ When /^I enter with valid new datas for category$/ do
 end
 
 When /^I enter with valid edit datas for category$/ do
-  visit "category/edit/1"
+  visit "category/edit/#{@category.id}"
   fill_in("category_name", :with => @category.name)
   fill_in("category_description", :with => @category.description)
   fill_in("category_position", :with => @category_position)

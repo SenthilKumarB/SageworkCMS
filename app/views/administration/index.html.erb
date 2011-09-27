@@ -1,9 +1,9 @@
 <div id="section1" >
 	<h3 style="margin-left:185px;">Site Admin</h3>
-	<p class="section_subclass">Categories<span class="submenu"> <%= link_to "Add new", :controller=>"category", :action => "new" %> | <%= link_to "View", :controller=>"category", :action => "list" %></span></p>
-	<p class="section_subclass">Articles<span class="submenu"> <%= link_to "Add new", :controller=>"article", :action => "new" %> | <%= link_to "View", :controller=>"article", :action => "list" %> </span></p>
-	<p class="section_subclass"> Pages<span class="submenu"><%= link_to "Add new", :controller=>"page", :action => "new" %> | <%= link_to "View", :controller=>"page", :action => "list" %> </span></p>
-	<p class="section_subclass">Extra Contents<span class="submenu"><%= link_to "Add new", :controller=>"extra_content", :action => "new" %> | <%= link_to "View", :controller=>"extra_content", :action => "list" %></span></p>
+	<p class="section_subclass">Categories<span class="submenu"> <%= link_to "Add new", {:controller=>"category", :action => "new"}, :id => "category_new"  %> | <%= link_to "View", {:controller=>"category", :action => "list"}, :id => "category_list" %></span></p>
+	<p class="section_subclass">Articles<span class="submenu"> <%= link_to "Add new", {:controller=>"article", :action => "new"}, :id => "article_new" %> | <%= link_to "View", {:controller=>"article", :action => "list"}, :id => "article_list" %> </span></p>
+	<p class="section_subclass"> Pages<span class="submenu"><%= link_to "Add new", {:controller=>"page", :action => "new"}, :id => "page_new" %> | <%= link_to "View", {:controller=>"page", :action => "list"}, :id => "page_list" %> </span></p>
+	<p class="section_subclass">White Papers<span class="submenu"><%= link_to "Add new", {:controller=>"white_paper", :action => "new"}, :id => "white_paper_new" %> | <%= link_to "View", {:controller=>"white_paper", :action => "list"}, :id => "white_page_list" %></span></p>
 </div ><br/>
 
 <div class="section2">

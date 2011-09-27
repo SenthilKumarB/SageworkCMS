@@ -20,12 +20,14 @@ module NavigationHelpers
     when /^article create page$/
       '/article/new'
 
-      when /^add new page$/
-        '/page/new'
+    when /^add new page$/
+      '/page/new'
 
-      when /^category new page$/
-        '/category/new'
+    when /^category new page$/
+      '/category/new'
 
+      when /^contact page$/
+        '/static/contact'
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:

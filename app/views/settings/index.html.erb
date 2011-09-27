@@ -1,7 +1,6 @@
 <div id="form_header">
   <h1> Site Management Panels </h1>
-  <% form_for @setting, :url => setting_create_path do |f| %>
-    <div>
+  <%= form_for @setting, :url => setting_create_path do |f| %>
       <p><a href="#" id="setting">Settings</a></p>
       <div id="setting_val">
           <div class="form">

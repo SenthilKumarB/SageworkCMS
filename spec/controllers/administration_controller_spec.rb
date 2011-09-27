@@ -9,7 +9,7 @@ describe AdministrationController do
  end
 
  it "should render index template on index call when logged in" do
-   session[:user_id] = users(:one).id
+   controller.stub!(:require_user).and_return(users) 
    get 'index'
  end
 end

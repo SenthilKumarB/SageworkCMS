@@ -22,7 +22,7 @@
       <span class="label"><label>Email</label></span><%= text_field :comments, :url %>
     </div>
     <div class="form">
-      <span class="label"><label>Comment</label></span><%= text_field :comments, :comment %>
+      <span class="label"><label>Comment</label></span><%= text_area :comments, :comment, :rows=>"10", :cols=>"50" %>
     </div>
     <%= hidden_field :comments, :article_id, :value => @article.id %>
     <%= submit_tag "Comment" %>

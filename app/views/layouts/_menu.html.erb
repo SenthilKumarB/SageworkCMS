@@ -6,5 +6,7 @@
     <% end %>
 <% end %>
 <li class="<%= params[:controller] == "article" && params[:action] == "news" ? 'current' : "" %>"><span><%= link_to "News", :controller => "article", :action => "news" %></span></li>
+<li class="<%= params[:controller] == "static" && params[:action] == "services" ? 'current' : "" %>"><span><%= link_to "Services", :controller => "static", :action => "services" %></span></li>
+<li class="<%= params[:controller] == "static" && params[:action] == "about" ? 'current' : "" %>"><span><%= link_to "about", :controller => "static", :action => "about" %></span></li>
 <li class="<%= params[:controller] == "static" && params[:action] == "contact" ? 'current' : "" %>"><span><%= link_to "Contact", :controller => "static", :action => "contact" %></span></li>
 <li class="<%= params[:controller] == "static" && params[:action] == "site_map" ? 'current' : "" %>"><span><%= link_to "Site Map", :controller => "static", :action => "site_map" %></span></li>

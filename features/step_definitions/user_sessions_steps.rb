@@ -1,9 +1,5 @@
 Given /^I am the registered user admin$/ do
-	 params = {
-    	:login => "admin",
-    	:password =>"admin"
-     }
-     @user = User.new(params)
+@user = Factory(:user)
 end
 
 When /^I login with invalid recaptcha credentials$/ do

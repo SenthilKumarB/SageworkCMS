@@ -1,13 +1,12 @@
 Given /^I am having article params$/ do
-  @params = {
-    	:title => "Rails",
-    	:body_part => "Introduction on Rails",
-        :position => "1",
-        :show_home_page => 1,
-        :enable_comment => 1,
-        :category_id => 1
-     }
-    @article = Article.new(@params)
+  @article = Factory(:article)
+end
+
+Given /^I am following new article page$/ do
+end
+
+When /^I should follow on Add New article page$/ do
+  click_link "article_new"
 end
 
 When /^I enter with valid new datas$/ do
@@ -21,7 +20,7 @@ When /^I enter with valid new datas$/ do
 end
 
 When /^I enter with valid edit datas$/ do
-  visit "article/edit/1"
+  visit "article/edit/#{@article.id}"
   fill_in("articles_title", :with => @article.title)
   fill_in("wysiwyg", :with => @article.body_part)
   select("uncategorized", :from => "articles_category_id")

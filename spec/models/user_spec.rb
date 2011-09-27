@@ -22,7 +22,7 @@ describe User do
 
   it "should allow valid email" do
     @admin.email = "senthil@sagework.com"
-    @admin.should have.at_least(0).error_on(:email)
+    @admin.should have_at_least(0).error_on(:email)
   end
 
   it "should allow valid password" do

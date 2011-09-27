@@ -4,12 +4,7 @@
 
 
 Given /^I enter required values to create user$/ do
-  	@params = {
-    	:login => "admin",
-    	:password => "admin",
-    	:password_confirmation => "admin",
-    	:email => "senthil1@sagework.com"
-  } 
+  @user = Factory.build(:user)
 end
 
 When /^I have no user$/ do
@@ -17,6 +12,5 @@ When /^I have no user$/ do
 end
 
 Then /^I need to create new admin user$/ do
-	User.create!(@params)
-	User.count.should == 1
+    @user.new_record?.should == true
 end
