@@ -28,7 +28,7 @@ class PageController < ApplicationController
 		@page = Page.new(params[:pages])
 		if @page.save
 			flash[:success] = "Successfully Saved"
-			redirect_to :back
+			redirect_to :action => :new
 		else
 			flash[:error] = "Failed in saving"
 			render :new
@@ -44,7 +44,7 @@ class PageController < ApplicationController
 		@page = Page.find(params[:id])
 		if @page.update_attributes(params[:pages])
 			flash[:success] = "Successfully updated"
-			redirect_to :back
+			redirect_to :action => :edit, :id => @page.id
 		else
 			flash[:error] = "Failed in updating"
 			render :edit

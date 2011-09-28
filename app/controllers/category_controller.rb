@@ -16,7 +16,7 @@ class CategoryController < ApplicationController
     @category = Category.find(params[:id])
     if @category.update_attributes(params[:category])
       flash[:success] = "Successfully updated"
-      redirect_to :back
+      redirect_to :action => :edit, :id => @category.id
     else
       flash[:error] = "Failed in updating"
       render :edit 
@@ -35,7 +35,7 @@ class CategoryController < ApplicationController
     @category = Category.new(params[:category])
     if @category.save
       flash[:success] = "Successfully Saved"
-      redirect_to :back
+      redirect_to :action => :new
     else
       flash[:error] = "Failed in Saving"
       render :new
