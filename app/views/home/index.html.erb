@@ -36,7 +36,7 @@
         <blockquote>
          <% @testimonial.each do |testimonial| %>
           <p class="first"><%= testimonial.quotes %><span class="last"></span></p>
-             <p><cite>-- <%= testimonial.name %>,<%= testimonial.position %> , <%= testimonial.company %> </cite>
+             <p><cite>-- <%= testimonial.name %>, <%= testimonial.position %> , <%= testimonial.company %> </cite>
           </p>
          <% end %>
         </blockquote>

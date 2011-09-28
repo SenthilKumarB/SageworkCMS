@@ -9,6 +9,10 @@ When /^I should follow on Add New article page$/ do
   click_link "article_new"
 end
 
+Given /^I should follow on View articles$/ do
+  click_link "article_list"
+end
+
 When /^I enter with valid new datas$/ do
   fill_in("articles_title", :with => @article.title)
   fill_in("wysiwyg", :with => @article.body_part)

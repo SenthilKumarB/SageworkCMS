@@ -21,3 +21,8 @@ Feature: New Page
     Given I am having page params
     When I enter with valid edit datas for page
     And I should see "Successfully updated"
+
+  Scenario: Listing pages
+     Given I am on administration page
+     And I should follow on View pages
+     And I should see "View All Pages"

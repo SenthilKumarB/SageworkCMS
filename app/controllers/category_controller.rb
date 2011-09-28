@@ -44,6 +44,7 @@ class CategoryController < ApplicationController
 
   def list
     @categories = Category.all
+    @page_title = "View all Categories"
   end
 
 end

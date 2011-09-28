@@ -4,7 +4,7 @@
   <div class="form">
     <% @testimonial.each do |testimonial| %>
         <b><%= testimonial.name %></b> =>
-        <%= link_to "View", :controller=>"testimonial", :action => "index", :category => testimonial.name %> =>
+        <%= link_to "View", :controller=>"testimonial", :action => "index", :id => testimonial.id %> =>
         <%= link_to "Edit", :controller=>"testimonial", :action => "edit", :id => testimonial.id %><br/>
     <% end %>
   </div>

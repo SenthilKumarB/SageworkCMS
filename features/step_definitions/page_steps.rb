@@ -9,6 +9,10 @@ When /^I should follow on Add New page$/ do
   click_link "page_new"
 end
 
+Given /^I should follow on View pages$/ do
+  click_link "page_list"
+end
+
 When /^I enter with valid new datas for page$/ do
   fill_in("pages_title", :with => @page.title)
   fill_in("pages_menu_header", :with => @page.menu_header)

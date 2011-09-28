@@ -21,3 +21,9 @@ Feature: Article page
     Given I am having article params
     When I enter with valid edit datas
     And I should see "Successfully updated"
+
+  Scenario: Listing articles
+     Given I am on administration page
+     And I should follow on View articles
+     And I should see "View All Articles"
+  

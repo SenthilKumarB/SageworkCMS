@@ -9,6 +9,10 @@ Given /^I am having testimonial params$/ do
    @testimonial = Factory(:testimonial)
 end
 
+When /^I should follow on View testimonials$/ do
+  click_link "testimonial_list"  
+end
+
 When /^I enter with valid new datas for testimonial$/ do
   fill_in('testimonial_name', :with => @testimonial.name)
   fill_in('testimonial_quotes', :with => @testimonial.quotes)

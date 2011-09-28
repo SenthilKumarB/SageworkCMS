@@ -1,17 +1,22 @@
 class TestimonialController < ApplicationController
   def index
+    @testimonial = Testimonial.find(params[:id])
+    @page_title = @testimonial.name
   end
 
   def new
    @testimonial = Testimonial.new
+    @page_title = "New Testimonial"
   end
 
   def edit
     @testimonial = Testimonial.find(params[:id])
+    @page_title = "Edit Testimonial"
   end
 
   def list
     @testimonial = Testimonial.all
+    @page_title = "View All Testimonials"
   end
 
   def update
@@ -35,5 +40,4 @@ class TestimonialController < ApplicationController
       render :new
     end
   end
-
 end

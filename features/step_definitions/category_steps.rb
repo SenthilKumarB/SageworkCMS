@@ -9,6 +9,10 @@ When /^I should follow on Add New Category page$/ do
   click_link "category_new"
 end
 
+Given /^I should follow on View Categories$/ do
+  click_link "category_list"
+end
+
 When /^I enter with valid new datas for category$/ do
   fill_in("category_name", :with => @category.name)
   fill_in("category_description", :with => @category.description)

@@ -16,3 +16,8 @@ Feature: White Paper page
    When I am on white paper new page
    When I enter with valid new datas for white paper
    And I should see "WhitePaper Successfully upload"
+
+  Scenario: Listing White Papers
+    Given I am on administration page
+    And I should follow on View white paper
+    And I should see "View All White Papers"

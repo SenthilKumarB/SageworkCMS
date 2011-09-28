@@ -21,3 +21,8 @@ Feature: Category page
     Given I am having category params
     When I enter with valid edit datas for category
     And I should see "Successfully updated"
+
+  Scenario: Listing categories
+    Given I am on administration page
+    And I should follow on View Categories 
+    And I should see "View all Categories"

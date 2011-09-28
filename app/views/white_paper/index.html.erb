@@ -1,3 +1,8 @@
-<h1>WhitePaper#index</h1>
-<p>Find me in app/views/white_paper/index.html.erb</p>
-<%= link_to "sadsf", "/data/agent_admin_1317189357.pdf" %>
+<%= @white_paper.name %>
+<% path = "/data/" + @white_paper.filename %>
+<h3>White Papers</h3>
+<div class="checkList">
+  <ul class="check">
+    <li><%= link_to @white_paper.name, path, :target => "_blank" %></li>
+  </ul>
+</div>

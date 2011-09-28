@@ -21,3 +21,8 @@ Feature: Testimonial page
     Given I am having testimonial params
     When I enter with valid edit datas for testimonial
     And I should see "Testimonial Successfully updated"
+
+  Scenario: Listing Testimonials
+    Given I am on administration page
+    And I should follow on View testimonials
+    And I should see "View All Testimonials"

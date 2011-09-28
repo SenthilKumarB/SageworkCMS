@@ -5,6 +5,11 @@ When /^I should follow on Add New white paper page$/ do
   click_link "white_paper_new"  
 end
 
+When /^I should follow on View white paper$/ do
+  click_link "white_page_list"
+end
+
+
 Given /^I am having White Paper params$/ do
       @white_paper = {
               :name => "Sagework",
