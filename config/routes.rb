@@ -1,4 +1,16 @@
 Samplecms::Application.routes.draw do
+  get "testimonial/index"
+
+  get "testimonial/new"
+
+  get "testimonial/edit"
+
+  get "white_paper/index"
+
+  get "white_paper/new"
+
+  get "white_paper/edit"
+  
   get "static/site_map"
 
   get "category/index"

@@ -29,6 +29,25 @@ module NavigationHelpers
       when /^contact page$/
         '/static/contact'
 
+      when /^white paper new page$/
+        '/white_paper/new'
+
+      when /^testimonial new page$/
+        '/testimonial/new'
+
+      when /^the about us page$/
+        '/static/about'
+
+      when /^the services page$/
+        '/static/services'
+
+      when /^the news page$/
+        '/article/news'
+
+      when /^the site map page$/
+        '/static/site_map'
+
+
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #

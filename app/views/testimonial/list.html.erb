@@ -1,0 +1,11 @@
+<div id="form_header">
+  <h3>Testimonial -  <%= link_to "Add new", :controller=>"testimonial", :action => "new" %> - See: (All) - Filter by: (Year / Month)</h3>
+
+  <div class="form">
+    <% @testimonial.each do |testimonial| %>
+        <b><%= testimonial.name %></b> =>
+        <%= link_to "View", :controller=>"testimonial", :action => "index", :category => testimonial.name %> =>
+        <%= link_to "Edit", :controller=>"testimonial", :action => "edit", :id => testimonial.id %><br/>
+    <% end %>
+  </div>
+</div>

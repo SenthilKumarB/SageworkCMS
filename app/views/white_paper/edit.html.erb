@@ -1,0 +1,14 @@
+<div id="form_header">
+	<%= form_tag({:controller => "white_paper", :action => "update", :id => @white_paper.id}, :multipart => true) %>
+	  <h2>Edit White Paper</h2>
+	  <div class="form">
+	    <span class="label">Name</span>
+	    <%= text_field_tag "white_paper_name" %>
+	  </div>
+
+   	  <div class="form">
+      	<span class="label">Upload file from:</span>
+      	<%= file_field_tag "fileupload" %>
+      </div>
+	<%= submit_tag "update" %>
+</div>

@@ -13,7 +13,7 @@ FactoryGirl.define do
 
   factory :article do |f|
     category
-    f.title "Rails"
+    f.title "Rails_Article"
     f.body_part "Introduction to Rails"
     f.category_id  1
     f.position  1
@@ -30,9 +30,16 @@ FactoryGirl.define do
   end
 
   factory :page do |f|
-    f.title "Rails"
+    f.title "Rails_Page"
     f.menu_header "rails"
     f.page_description  "Introduction on Rails - Sagework"
+    f.position  1
+  end
+
+  factory :testimonial do |f|
+    f.name "Ganesh Gunasegaran"
+    f.quotes "Sagework - Simplify IT"
+    f.company  "Sagework Software Private Ltd"
     f.position  1
   end
 end

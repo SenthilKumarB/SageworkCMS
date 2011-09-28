@@ -1,0 +1,24 @@
+<div id="form_header">
+	<%= form_tag({:controller => "testimonial", :action => "save"}) %>
+	  <h2> New Testimonial Page</h2>
+	  <div class="form">
+	    <span class="label">Name</span>
+	    <%= text_field :testimonial, :name %>
+	  </div>
+
+	  <div class="form">
+	    <span class="label">Quotes</span>
+	    <%= text_area :testimonial, :quotes, :rows => 15, :col => 20  %>
+	  </div>
+
+      <div class="form">
+	    <span class="label">Company</span>
+	    <%= text_field :testimonial, :company %>
+	  </div>
+
+	  <div class="form">
+	    <span class="label">Position</span>
+	    <%= text_field :testimonial, :position %>
+	  </div>
+	<%= submit_tag "save" %>
+</div>
