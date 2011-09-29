@@ -2,6 +2,9 @@ require 'spec_helper'
 
 describe CategoryController do
   fixtures :users
+  fixtures :categories
+  fixtures :articles
+  
   before(:each) do
     @valid_attributes = {
             :name => "sagework",
@@ -9,6 +12,14 @@ describe CategoryController do
             :position=> 1
     }
     controller.stub!(:require_user).and_return(users)
+  end
+
+   describe "GET 'index'" do
+    it "should get index" do
+      @category = Category.find_by_name(categories(:one).name)
+      @articles= @category.articles
+      @page_title = @category.name
+    end
   end
 
  describe "GET 'new'" do

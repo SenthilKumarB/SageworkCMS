@@ -4,6 +4,7 @@ describe ArticleController do
   fixtures :users
   fixtures :articles
   fixtures :categories
+  
   before(:each) do
     @valid_attributes = {
             :user_id => users(:one).id,
@@ -17,6 +18,15 @@ describe ArticleController do
 
     controller.stub!(:require_user).and_return(users)
   end
+
+  describe "GET 'index'" do
+    it "should get index" do
+      article = Article.find_by_title(articles(:one).title)
+      @page_title = article.title
+      get :index, :articles=>@page_title
+    end
+  end
+
 
   it "should create new article" do
     get 'new'
