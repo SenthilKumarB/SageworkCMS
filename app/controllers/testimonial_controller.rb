@@ -14,9 +14,13 @@ class TestimonialController < ApplicationController
     @page_title = "Edit Testimonial"
   end
 
-  def list
-    @testimonial = Testimonial.all
+def list
     @page_title = "View All Testimonials"
+    if params[:sort].blank? || params[:sort] == "all"
+      @testimonial = Testimonial.all
+    else
+      @testimonial = search(Testimonial, params[:sort])
+    end
   end
 
   def update

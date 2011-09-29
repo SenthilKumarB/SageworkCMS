@@ -60,9 +60,13 @@ class ArticleController < ApplicationController
     end
   end
 
-	def list
-		@articles = Article.all
-    @page_title = "View All Articles"
+  def list
+     @page_title = "View All Articles"
+     if params[:sort].blank? || params[:sort] == "all"
+      @articles = Article.all
+     else
+      @articles = search(Article, params[:sort])
+     end
   end
 
   def news

@@ -51,9 +51,14 @@ class PageController < ApplicationController
 		end
 	end
 
-	def list
-		@pages = Page.all
-		@page_title = "View All Pages"
-	end
+  def list
+    @page_title = "View All Pages"
+    if params[:sort].blank? || params[:sort] == "all"
+      @pages = Page.all
+    else
+      @pages = search(Page, params[:sort])
+    end
+  end
+
 
 end

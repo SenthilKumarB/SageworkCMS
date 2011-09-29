@@ -1,9 +1,20 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
-  helper_method :current_user_session, :current_user, :website_title, :website_description, :website_version
+  helper_method :current_user_session, :current_user, :website_title, :website_description, :website_version, :search
 
   private
+
+  def search(model, params)
+    condition = params == "year" ? Time.now.year : Time.now.month
+    instance_value = []
+    model.all.group_by do |attr|
+      condition_search = (params == "year") ? (attr.created_at.year == Time.now.year) :
+                               (attr.created_at.month == Time.now.month && attr.created_at.year == Time.now.year)
+      instance_value << attr if condition_search
+    end
+    return instance_value
+  end
     
   def website_title
     setting = Setting.find_by_name("website_title")

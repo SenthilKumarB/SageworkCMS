@@ -35,6 +35,10 @@ class WhitePaperController < ApplicationController
 
   def list
     @page_title = "View All White Papers"
-    @white_papers = WhitePaper.all
+    if params[:sort].blank? || params[:sort] == "all"
+      @white_papers = WhitePaper.all
+    else
+      @white_papers = search(WhitePaper, params[:sort])
+    end
   end
 end

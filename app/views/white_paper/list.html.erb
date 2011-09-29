@@ -1,11 +1,16 @@
 <div id="form_header">
-  <h3>White Papers -  <%= link_to "Add new", :controller=>"white_paper", :action => "new" %> - See: (All) - Filter by: (Year / Month)</h3>
+  <h3>White Papers -  <%= link_to "Add new", :controller=>"white_paper", :action => "new" %> -
+    See: <%= link_to "All", :controller => "white_paper", :action => "list", :sort => "all" %> - Filter by: (<%= link_to "Year", :controller => "white_paper", :action => "list", :sort => "year" %>  /
+    <%= link_to "Month", :controller => "white_paper", :action => "list", :sort => "month" %>)</h3>
 
   <div class="form">
-    <% @white_papers.each do |white_paper| %>
-        <b><%= white_paper.name %></b> =>
-        <%= link_to "View", :controller=>"white_paper", :action => "index", :id => white_paper.id %> =>
-        <%= link_to "Edit", :controller=>"white_paper", :action => "edit", :id => white_paper.id %><br/>
+    <% unless @white_papers.blank? %>
+        <% @white_papers.each do |white_paper| %>
+            <b><%= white_paper.name %></b> =>
+            <%= link_to "View", :controller=>"white_paper", :action => "index", :id => white_paper.id %> =>
+            <%= link_to "Edit", :controller=>"white_paper", :action => "edit", :id => white_paper.id %>
+            <br/>
+        <% end %>
     <% end %>
   </div>
 </div>

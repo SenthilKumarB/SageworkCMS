@@ -1,7 +1,9 @@
 <div id="form_header">
-  <h3>Testimonial -  <%= link_to "Add new", :controller=>"testimonial", :action => "new" %> - See: (All) - Filter by: (Year / Month)</h3>
+  <h3>Testimonial - <%= link_to "Add new", :controller=>"testimonial", :action => "new" %> -
+    See: <%= link_to "All", :controller => "testimonial", :action => "list", :sort => "all" %> - Filter by: (<%= link_to "Year", :controller => "testimonial", :action => "list", :sort => "year" %>  /
+    <%= link_to "Month", :controller => "testimonial", :action => "list", :sort => "month" %>)</h3>
 
-  <div class="form">
+   <div class="form">
     <% @testimonial.each do |testimonial| %>
         <b><%= testimonial.name %></b> =>
         <%= link_to "View", :controller=>"testimonial", :action => "index", :id => testimonial.id %> =>

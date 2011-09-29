@@ -1,5 +1,8 @@
 <div id="form_header">
-  <h3>Category -  <%= link_to "Add new", :controller=>"category", :action => "new" %> - See: (All) - Filter by: (Year / Month)</h3>
+  <h3>Category -  <%= link_to "Add new", :controller=>"category", :action => "new" %> -
+    See: <%= link_to "All", :controller => "category", :action => "list", :sort => "all" %> - Filter by: (<%= link_to "Year", :controller => "category", :action => "list", :sort => "year" %>  /
+    <%= link_to "Month", :controller => "category", :action => "list", :sort => "month" %>)</h3>
+
 
   <div class="form">
     <% @categories.each do |category| %>

@@ -43,8 +43,13 @@ class CategoryController < ApplicationController
   end
 
   def list
-    @categories = Category.all
     @page_title = "View all Categories"
+    if params[:sort].blank? || params[:sort] == "all"
+      @categories = Category.all
+    else
+      @categories = search(Category, params[:sort])
+    end
   end
+
 
 end

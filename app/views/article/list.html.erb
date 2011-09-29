@@ -1,5 +1,8 @@
 <div id="form_header">
-  <h3>Articles -  <%= link_to "Add new", :controller=>"article", :action => "new" %> - See: (All) - Filter by: (Year / Month)</h3>
+  <h3>Articles -  <%= link_to "Add new", :controller => "article", :action => "new" %> -
+    See: <%= link_to "All", :controller => "article", :action => "list", :sort => "all" %> - Filter by: (<%= link_to "Year", :controller => "article", :action => "list", :sort => "year" %>  /
+    <%= link_to "Month", :controller => "article", :action => "list", :sort => "month" %>)</h3>
+
 
   <div class="form">
     <% @articles.each do |article| %>
