@@ -6,7 +6,7 @@
 	<% @pages.each do |page| %>
 		<%= text_field :page, :position, :value => page.position, :disabled => true, :size => 2 %>
 		<b><%= page.title %></b> =>
-		<%= link_to "View", :controller=>"page", :action => "index", :pages => page.menu_header %> => 
+		<%= link_to "View", {:controller=>"page", :action => "index", :pages => page.menu_header}, :id => "page_list_#{page.id}" %> =>
 		<%= link_to "Edit", :controller=>"page", :action => "edit", :id => page.id %> <br/>
 	<% end %>
   </div>

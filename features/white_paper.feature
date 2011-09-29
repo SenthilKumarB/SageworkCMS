@@ -21,3 +21,5 @@ Feature: White Paper page
     Given I am on administration page
     And I should follow on View white paper
     And I should see "View All White Papers"
+
+  

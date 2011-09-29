@@ -5,26 +5,26 @@
       <div id="setting_val">
           <div class="form">
            <span class="setting_label"><label>Website title</label></span>
-              <%= text_field_tag :website_title, nil, :placeholder => dynamic_setting_finder(:website_title) %>
+              <%= text_field_tag :website_title, nil, :placeholder => dynamic_setting_finder(:website_title), :value => dynamic_setting_finder(:website_title) %>
           </div>
           <div class="form">
             <span class="setting_label"><label>Website description</label></span>
-              <%= text_field_tag :website_description, nil, :placeholder => dynamic_setting_finder(:website_description) %>
+              <%= text_field_tag :website_description, nil, :placeholder => dynamic_setting_finder(:website_description), :value => dynamic_setting_finder(:website_description) %>
           </div>
           <div class="form">
             <span class="setting_label"><label>Website version</label></span>
-              <%= text_field_tag :website_version, nil, :placeholder => dynamic_setting_finder(:website_version) %>
+              <%= text_field_tag :website_version, nil, :placeholder => dynamic_setting_finder(:website_version), :value => dynamic_setting_finder(:website_version) %>
           </div>
       </div>
       <p><a href="#" id="contact_info">Contact Info</a></p>
       <div id="contact_info_val">
          <div class="form">
             <span class="setting_label"><label>Website email</label></span>
-            <%= text_field_tag :website_email, nil, :placeholder => dynamic_setting_finder(:website_email) %>
+            <%= text_field_tag :website_email, nil, :placeholder => dynamic_setting_finder(:website_email), :value => dynamic_setting_finder(:website_email) %>
          </div>
          <div class="form">
             <span class="setting_label"><label>Contact Subject</label></span>
-            <%= text_field_tag :contact_subject, nil, :placeholder => dynamic_setting_finder(:contact_subject) %>
+            <%= text_field_tag :contact_subject, nil, :placeholder => dynamic_setting_finder(:contact_subject), :value => dynamic_setting_finder(:contact_subject) %>
         </div>
     </div>
     <button>save</button>

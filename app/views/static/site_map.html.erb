@@ -3,13 +3,17 @@
 <div class="checkList">
   <ul class="check">
     <li><%= link_to "HOME", home_path %></li>
+    <li><%= link_to "NEWS", :controller => "article", :action => "news" %></li>
     <% @page = Page.all %>
     <% unless @page.blank? %>
         <% @page.each do |page| %>
-            <li><%= link_to page.menu_header.humanize, page_path(:pages => page.menu_header) %></li>
+            <li><%= link_to page.menu_header.humanize.capitalize, page_path(:pages => page.menu_header) %></li>
         <% end %>
     <% end %>
-    <li><%= link_to "Site Map", :controller => "static", :action => "site_map" %></li>
+    <li><%= link_to "SERVICES", :controller => "static", :action => "services" %></li>
+    <li><%= link_to "ABOUT", :controller => "static", :action => "about" %></li>
+    <li><%= link_to "CONTACT", :controller => "static", :action => "contact" %></li>
+    <li><%= link_to "SITE MAP", :controller => "static", :action => "site_map" %></li>
   </ul>
   </div>
 <h3>Articles</h3>

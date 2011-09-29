@@ -8,7 +8,7 @@
     <% @categories.each do |category| %>
         <%= text_field :category, :position, :value => category.position, :disabled=>true, :size => 2 %>
         <b><%= category.name %></b> =>
-        <%= link_to "View", :controller=>"category", :action => "index", :category => category.name %> =>
+        <%= link_to "View", {:controller=>"category", :action => "index", :category => category.name}, :id => "category_list_#{category.id}" %> =>
         <%= link_to "Edit", :controller=>"category", :action => "edit", :id => category.id %><br/>
     <% end %>
   </div>

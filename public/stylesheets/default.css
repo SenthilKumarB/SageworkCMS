@@ -28,7 +28,7 @@
 
 .form{
      margin-right: 10px;
-     padding : 10px 10px 10px 0px;
+     padding : 10px;
 }
 
 .label{
@@ -70,7 +70,7 @@ body {
 }
 
 #form_header {
-    width:500px;
+    width:80%;
     border:1px solid #E5E5E5;
     padding:10px;
     margin: 10px;
@@ -458,6 +458,16 @@ blockquote p .last
 
 .wysiwyg{
     margin-left:100px;
+}
+
+#wysiwyg{
+    width: 85%;
+    height: 300px;
+    margin-left:100px;
+}
+
+#wysiwygIFrame{
+    height: 350px;    
 }
 
 .newsWrapper

@@ -13,6 +13,25 @@ When /^I should follow on View testimonials$/ do
   click_link "testimonial_list"  
 end
 
+When /^I should follow on view testimonial page$/ do
+   click_link "testimonial_list_#{@testimonial.id}"
+end
+
+When /^I should follow on Testimonial sort by all page$/ do
+  click_link "All"
+  has_content? @testimonial.name
+end
+
+When /^I should follow on Testimonial sort by year page$/ do
+  click_link "Year"
+  has_content? @testimonial.name
+end
+
+When /^I should follow on Testimonial sort by month page$/ do
+  click_link "Month"
+  has_content? @testimonial.name
+end
+
 When /^I enter with valid new datas for testimonial$/ do
   fill_in('testimonial_name', :with => @testimonial.name)
   fill_in('testimonial_quotes', :with => @testimonial.quotes)
