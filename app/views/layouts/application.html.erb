@@ -53,7 +53,7 @@
         <%= yield %>
       </div>
       <div id="footer">
-        This site is powered by <%= website_title %> | <%= link_to "Admin", administration_path %> =>
+        &copy; Copyright <%= Time.now.year %> <%= website_title %> · All rights reserved . <%= link_to "Admin", administration_path %> =>
         <% unless current_user.blank? %>
             <%= link_to "logout", logout_path %>
         <% else %>
