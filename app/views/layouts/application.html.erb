@@ -3,6 +3,35 @@
   <head>
     <title><%= @page_title %> - <%= website_title %> <%= website_version %></title>
     <%= javascript_include_tag :all %>
+    <!-- For Activing alternate editor change 'html_editor' id to 'wysiwyg' in all text area -->
+    <script type="text/javascript" src="/javascripts/jscripts/tiny_mce/tiny_mce.js"></script>
+    <script type="text/javascript">
+      tinyMCE.init({
+        // General options
+        mode : "textareas",
+        theme : "advanced",
+        plugins : "pagebreak,style,layer,table,save,advhr,advimage,advlink,emotions,iespell,inlinepopups,insertdatetime,preview,media,searchreplace,print,contextmenu,paste,directionality,fullscreen,noneditable,visualchars,nonbreaking,xhtmlxtras,template,codemagic",
+
+        // Theme options
+        theme_advanced_buttons1 : "save,newdocument,|,bold,italic,underline,strikethrough,|,justifyleft,justifycenter,justifyright,justifyfull,|,styleselect,formatselect,fontselect,fontsizeselect",
+        theme_advanced_buttons2 : "cut,copy,paste,pastetext,pasteword,|,search,replace,|,bullist,numlist,|,outdent,indent,blockquote,|,undo,redo,|,link,unlink,anchor,image,cleanup,codemagic,|,insertdate,inserttime,preview,|,forecolor,backcolor",
+        theme_advanced_buttons3 : "tablecontrols,|,hr,removeformat,visualaid,|,sub,sup,|,charmap,emotions,iespell,media,advhr,|,print,|,ltr,rtl,|,fullscreen",
+        theme_advanced_buttons4 : "insertlayer,moveforward,movebackward,absolute,|,styleprops,|,cite,abbr,acronym,del,ins,attribs,|,visualchars,nonbreaking,template,pagebreak",
+        theme_advanced_toolbar_location : "top",
+        theme_advanced_toolbar_align : "left",
+        theme_advanced_statusbar_location : "bottom",
+        theme_advanced_resizing : true,
+      });
+      $(document).ready(function(){
+        $("#preview_pages").hide();      
+        $("#preview").click(function(){
+          var page_description = $("#html_editor").val();
+          $("#preview_pages").toggle();      
+          $("#preview_pages").html(page_description);
+        });
+      });
+    </script>
+
     <%= stylesheet_link_tag :all %>
     <%= csrf_meta_tag %>
   </head>

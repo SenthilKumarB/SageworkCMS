@@ -11,7 +11,7 @@ When /^I enter with valid contacting details$/ do
   fill_in "contact_email_name", :with => @contact[:name]
   fill_in "contact_email_email", :with => @contact[:email]
   fill_in "contact_email_website_url", :with => @contact[:website_url]
-  fill_in "wysiwyg", :with => @contact[:message]
+  fill_in "html_editor", :with => @contact[:message]
   find('#first_captcha').set "1"
   find('#second_captcha').set "7"
   fill_in("user_captcha", :with => "8")

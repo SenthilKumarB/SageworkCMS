@@ -36,7 +36,7 @@ end
 When /^I enter with valid new datas for page$/ do
   fill_in("pages_title", :with => @page.title)
   fill_in("pages_menu_header", :with => @page.menu_header)
-  fill_in("wysiwyg", :with => @page.page_description)
+  fill_in("html_editor", :with => @page.page_description)
   fill_in("pages_position", :with => @page.position)
   click_button("Save")
 end
@@ -45,7 +45,7 @@ When /^I enter with valid edit datas for page$/ do
   visit "page/edit/#{@page.id}"
   fill_in("pages_title", :with => @page.title)
   fill_in("pages_menu_header", :with => @page.menu_header)
-  fill_in("wysiwyg", :with => @page.page_description)
+  fill_in("html_editor", :with => @page.page_description)
   fill_in("pages_position", :with => @page.position)
   click_button("Update")
 end

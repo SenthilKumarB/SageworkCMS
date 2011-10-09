@@ -10,11 +10,11 @@ $(function()
     }
   });
 });
-$(document).ready(function(){
-  $("#preview_pages").hide();      
-  $("#preview").click(function(){
-    var page_description = $("#wysiwyg").val();
-    $("#preview_pages").toggle();      
-    $("#preview_pages").html(page_description);
-  });
-});
+// $(document).ready(function(){
+//   $("#preview_pages").hide();      
+//   $("#preview").click(function(){
+//     var page_description = $("#html_editor").val();
+//     $("#preview_pages").toggle();      
+//     $("#preview_pages").html(page_description);
+//   });
+// });

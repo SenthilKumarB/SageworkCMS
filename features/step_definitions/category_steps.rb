@@ -35,7 +35,7 @@ end
 
 When /^I enter with valid new datas for category$/ do
   fill_in("category_name", :with => @category.name)
-  fill_in("wysiwyg", :with => @category.description)
+  fill_in("html_editor", :with => @category.description)
   fill_in("category_position", :with => @category_position)
   click_button("save")
 end
